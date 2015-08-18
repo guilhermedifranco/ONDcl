@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SmartBagModelStoreContainer" CdmEntityContainer="SmartBagEntities">
+    <EntitySetMapping Name="AFV_CAMPOS_SINCRONIZACAO_TBT">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_CAMPOS_SINCRONIZACAO_TBT">
+        <MappingFragment StoreEntitySet="AFV_CAMPOS_SINCRONIZACAO_TBT">
+          <ScalarProperty Name="NOMETABELA" ColumnName="NOMETABELA" />
+          <ScalarProperty Name="ORIGEM" ColumnName="ORIGEM" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_FOTO_MARCA">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_FOTO_MARCA">
+        <MappingFragment StoreEntitySet="AFV_FOTO_MARCA">
+          <ScalarProperty Name="CodFotoMarca" ColumnName="CodFotoMarca" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodFoto" ColumnName="CodFoto" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlOperacao" ColumnName="CtrlOperacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_FOTO_PRODUTO">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_FOTO_PRODUTO">
+        <MappingFragment StoreEntitySet="AFV_FOTO_PRODUTO">
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodProdutoFoto" ColumnName="CodProdutoFoto" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+          <ScalarProperty Name="CtrlOperacao" ColumnName="CtrlOperacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDExterno" ColumnName="IDExterno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_INSTALACAO">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_INSTALACAO">
+        <MappingFragment StoreEntitySet="AFV_INSTALACAO">
+          <ScalarProperty Name="CodInstalacao" ColumnName="CodInstalacao" />
+          <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+          <ScalarProperty Name="NomeMaquina" ColumnName="NomeMaquina" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Dispositivo" ColumnName="Dispositivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_PARAMETRO_SINCRONIZACAO">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_PARAMETRO_SINCRONIZACAO">
+        <MappingFragment StoreEntitySet="AFV_PARAMETRO_SINCRONIZACAO">
+          <ScalarProperty Name="CodParametro" ColumnName="CodParametro" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_TABELA_SINCRONIZACAO_TBT">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_TABELA_SINCRONIZACAO_TBT">
+        <MappingFragment StoreEntitySet="AFV_TABELA_SINCRONIZACAO_TBT">
+          <ScalarProperty Name="NomeTabela" ColumnName="NomeTabela" />
+          <ScalarProperty Name="TipoSincronizacao" ColumnName="TipoSincronizacao" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="IndGenerica" ColumnName="IndGenerica" />
+          <ScalarProperty Name="Ordem" ColumnName="Ordem" />
+          <ScalarProperty Name="IndBackup" ColumnName="IndBackup" />
+          <ScalarProperty Name="IndDelete" ColumnName="IndDelete" />
+          <ScalarProperty Name="TipoAcaoTabela" ColumnName="TipoAcaoTabela" />
+          <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+          <ScalarProperty Name="MaxRegister" ColumnName="MaxRegister" />
+          <ScalarProperty Name="TipoCargaERP" ColumnName="TipoCargaERP" />
+          <ScalarProperty Name="Dispositivo" ColumnName="Dispositivo" />
+          <ScalarProperty Name="NomeTabelaCliente" ColumnName="NomeTabelaCliente" />
+          <ScalarProperty Name="ComandoConsulta" ColumnName="ComandoConsulta" />
+          <ScalarProperty Name="ComandoConsultaCount" ColumnName="ComandoConsultaCount" />
+          <ScalarProperty Name="ComandoExportacaoCliente" ColumnName="ComandoExportacaoCliente" />
+          <ScalarProperty Name="ComandoSincronizacao" ColumnName="ComandoSincronizacao" />
+          <ScalarProperty Name="ComandoAtualizacao" ColumnName="ComandoAtualizacao" />
+          <ScalarProperty Name="ComandoControleFluxo" ColumnName="ComandoControleFluxo" />
+          <ScalarProperty Name="Essencial" ColumnName="Essencial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_CARRINHO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_CARRINHO">
+        <MappingFragment StoreEntitySet="TBT_CARRINHO">
+          <ScalarProperty Name="CodCarrinho" ColumnName="CodCarrinho" />
+          <ScalarProperty Name="CodPedido" ColumnName="CodPedido" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="CodPessoaRepresentante" ColumnName="CodPessoaRepresentante" />
+          <ScalarProperty Name="CodPessoaPreposto" ColumnName="CodPessoaPreposto" />
+          <ScalarProperty Name="CodSituacaoPedido" ColumnName="CodSituacaoPedido" />
+          <ScalarProperty Name="CodTipoPedido" ColumnName="CodTipoPedido" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CodTabelaPreco" ColumnName="CodTabelaPreco" />
+          <ScalarProperty Name="CodCondicaoPagamento" ColumnName="CodCondicaoPagamento" />
+          <ScalarProperty Name="CodColecao" ColumnName="CodColecao" />
+          <ScalarProperty Name="CodAtendimento" ColumnName="CodAtendimento" />
+          <ScalarProperty Name="DataEmissao" ColumnName="DataEmissao" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="QtdTotal" ColumnName="QtdTotal" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="ValorTotalLiquido" ColumnName="ValorTotalLiquido" />
+          <ScalarProperty Name="OrdemCompra" ColumnName="OrdemCompra" />
+          <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
+          <ScalarProperty Name="PercentualDesconto" ColumnName="PercentualDesconto" />
+          <ScalarProperty Name="PercentualComissaoRep" ColumnName="PercentualComissaoRep" />
+          <ScalarProperty Name="CifFob" ColumnName="CifFob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="CodTransportadora" ColumnName="CodTransportadora" />
+          <ScalarProperty Name="CodRedespacho" ColumnName="CodRedespacho" />
+          <ScalarProperty Name="CodPedidoOrigem" ColumnName="CodPedidoOrigem" />
+          <ScalarProperty Name="CodInstalacao" ColumnName="CodInstalacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_CARTEIRA_CLIENTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_CARTEIRA_CLIENTE">
+        <MappingFragment StoreEntitySet="TBT_CARTEIRA_CLIENTE">
+          <ScalarProperty Name="CodPessoa" ColumnName="CodPessoa" />
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="IndPrincipal" ColumnName="IndPrincipal" />
+          <ScalarProperty Name="Comissao" ColumnName="Comissao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_COLECAO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_COLECAO">
+        <MappingFragment StoreEntitySet="TBT_COLECAO">
+          <ScalarProperty Name="CodColecao" ColumnName="CodColecao" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_CONDICAO_PAGAMENTO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_CONDICAO_PAGAMENTO">
+        <MappingFragment StoreEntitySet="TBT_CONDICAO_PAGAMENTO">
+          <ScalarProperty Name="CodCondicaoPagamento" ColumnName="CodCondicaoPagamento" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="PrazoMedio" ColumnName="PrazoMedio" />
+          <ScalarProperty Name="QtdParcela" ColumnName="QtdParcela" />
+          <ScalarProperty Name="ValorMinimoParcela" ColumnName="ValorMinimoParcela" />
+          <ScalarProperty Name="PercentualDesconto" ColumnName="PercentualDesconto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_CONFIGURACAO_NIVEL">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_CONFIGURACAO_NIVEL">
+        <MappingFragment StoreEntitySet="TBT_CONFIGURACAO_NIVEL">
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodNivel" ColumnName="CodNivel" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_COR">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_COR">
+        <MappingFragment StoreEntitySet="TBT_COR">
+          <ScalarProperty Name="CodCor" ColumnName="CodCor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_CRITICA_CARRINHO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_CRITICA_CARRINHO">
+        <MappingFragment StoreEntitySet="TBT_CRITICA_CARRINHO">
+          <ScalarProperty Name="CodCarrinho" ColumnName="CodCarrinho" />
+          <ScalarProperty Name="SeqCritica" ColumnName="SeqCritica" />
+          <ScalarProperty Name="Critica" ColumnName="Critica" />
+          <ScalarProperty Name="CodItemCarrinho" ColumnName="CodItemCarrinho" />
+          <ScalarProperty Name="CodGradeItemCarrinho" ColumnName="CodGradeItemCarrinho" />
+          <ScalarProperty Name="CtrlOperacao" ColumnName="CtrlOperacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_DERIVACAO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_DERIVACAO">
+        <MappingFragment StoreEntitySet="TBT_DERIVACAO">
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="CodSubGrade" ColumnName="CodSubGrade" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_DERIVACAO_GRADE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_DERIVACAO_GRADE">
+        <MappingFragment StoreEntitySet="TBT_DERIVACAO_GRADE">
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="Ordem" ColumnName="Ordem" />
+          <ScalarProperty Name="Qtd" ColumnName="Qtd" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_ENDERECO_CLIENTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_ENDERECO_CLIENTE">
+        <MappingFragment StoreEntitySet="TBT_ENDERECO_CLIENTE">
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="SeqEndereco" ColumnName="SeqEndereco" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="IndComercial" ColumnName="IndComercial" />
+          <ScalarProperty Name="IndResidencial" ColumnName="IndResidencial" />
+          <ScalarProperty Name="IndCobranca" ColumnName="IndCobranca" />
+          <ScalarProperty Name="IndEntrega" ColumnName="IndEntrega" />
+          <ScalarProperty Name="IndContato" ColumnName="IndContato" />
+          <ScalarProperty Name="IndPrincipal" ColumnName="IndPrincipal" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GERENTE_REPRESENTANTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GERENTE_REPRESENTANTE">
+        <MappingFragment StoreEntitySet="TBT_GERENTE_REPRESENTANTE">
+          <ScalarProperty Name="CodPessoaGerente" ColumnName="CodPessoaGerente" />
+          <ScalarProperty Name="CodPessoaRepresentante" ColumnName="CodPessoaRepresentante" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRADE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRADE">
+        <MappingFragment StoreEntitySet="TBT_GRADE">
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="TamanhoCaixa" ColumnName="TamanhoCaixa" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRADE_ITEM_CARRINHO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRADE_ITEM_CARRINHO">
+        <MappingFragment StoreEntitySet="TBT_GRADE_ITEM_CARRINHO">
+          <ScalarProperty Name="CodCarrinho" ColumnName="CodCarrinho" />
+          <ScalarProperty Name="CodItemCarrinho" ColumnName="CodItemCarrinho" />
+          <ScalarProperty Name="CodGradeItemCarrinho" ColumnName="CodGradeItemCarrinho" />
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="Qtd" ColumnName="Qtd" />
+          <ScalarProperty Name="CodInstalacao" ColumnName="CodInstalacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRADE_ITEM_PEDIDO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRADE_ITEM_PEDIDO">
+        <MappingFragment StoreEntitySet="TBT_GRADE_ITEM_PEDIDO">
+          <ScalarProperty Name="CodPedido" ColumnName="CodPedido" />
+          <ScalarProperty Name="CodItemPedido" ColumnName="CodItemPedido" />
+          <ScalarProperty Name="CodGradeItemPedido" ColumnName="CodGradeItemPedido" />
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="Qtd" ColumnName="Qtd" />
+          <ScalarProperty Name="QtdFaturada" ColumnName="QtdFaturada" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRADE_MODELO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRADE_MODELO">
+        <MappingFragment StoreEntitySet="TBT_GRADE_MODELO">
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="CodProporcionalidade" ColumnName="CodProporcionalidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRUPO_CLIENTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRUPO_CLIENTE">
+        <MappingFragment StoreEntitySet="TBT_GRUPO_CLIENTE">
+          <ScalarProperty Name="CodGrupoCliente" ColumnName="CodGrupoCliente" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_GRUPO_PRODUTO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_GRUPO_PRODUTO">
+        <MappingFragment StoreEntitySet="TBT_GRUPO_PRODUTO">
+          <ScalarProperty Name="CodGrupoProduto" ColumnName="CodGrupoProduto" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_ITEM_CARRINHO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_ITEM_CARRINHO">
+        <MappingFragment StoreEntitySet="TBT_ITEM_CARRINHO">
+          <ScalarProperty Name="CodCarrinho" ColumnName="CodCarrinho" />
+          <ScalarProperty Name="CodItemCarrinho" ColumnName="CodItemCarrinho" />
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="QtdCaixa" ColumnName="QtdCaixa" />
+          <ScalarProperty Name="QtdTotal" ColumnName="QtdTotal" />
+          <ScalarProperty Name="ValorUnitario" ColumnName="ValorUnitario" />
+          <ScalarProperty Name="ValorUnitarioLiquido" ColumnName="ValorUnitarioLiquido" />
+          <ScalarProperty Name="PercDesc" ColumnName="PercDesc" />
+          <ScalarProperty Name="CodInstalacao" ColumnName="CodInstalacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_ITEM_PEDIDO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_ITEM_PEDIDO">
+        <MappingFragment StoreEntitySet="TBT_ITEM_PEDIDO">
+          <ScalarProperty Name="CodPedido" ColumnName="CodPedido" />
+          <ScalarProperty Name="CodItemPedido" ColumnName="CodItemPedido" />
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="QtdCaixa" ColumnName="QtdCaixa" />
+          <ScalarProperty Name="QtdTotal" ColumnName="QtdTotal" />
+          <ScalarProperty Name="QtdFaturada" ColumnName="QtdFaturada" />
+          <ScalarProperty Name="ValorUnitario" ColumnName="ValorUnitario" />
+          <ScalarProperty Name="ValorUnitarioLiquido" ColumnName="ValorUnitarioLiquido" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="SerieNF" ColumnName="SerieNF" />
+          <ScalarProperty Name="NumeroNF" ColumnName="NumeroNF" />
+          <ScalarProperty Name="PercentualDesconto" ColumnName="PercentualDesconto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_ITEM_PRONTA_ENTREGA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_ITEM_PRONTA_ENTREGA">
+        <MappingFragment StoreEntitySet="TBT_ITEM_PRONTA_ENTREGA">
+          <ScalarProperty Name="CodItemProntaEntrega" ColumnName="CodItemProntaEntrega" />
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="CodGrade" ColumnName="CodGrade" />
+          <ScalarProperty Name="QtdCaixa" ColumnName="QtdCaixa" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_LINHA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_LINHA">
+        <MappingFragment StoreEntitySet="TBT_LINHA">
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_MARCA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_MARCA">
+        <MappingFragment StoreEntitySet="TBT_MARCA">
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_MARKETING">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_MARKETING">
+        <MappingFragment StoreEntitySet="TBT_MARKETING">
+          <ScalarProperty Name="CodMarketing" ColumnName="CodMarketing" />
+          <ScalarProperty Name="CodTipoMarketing" ColumnName="CodTipoMarketing" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="TipoArquivo" ColumnName="TipoArquivo" />
+          <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+          <ScalarProperty Name="CodColecao" ColumnName="CodColecao" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="IndDestaque" ColumnName="IndDestaque" />
+          <ScalarProperty Name="Publicacao" ColumnName="Publicacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_MARKETING_MODELO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_MARKETING_MODELO">
+        <MappingFragment StoreEntitySet="TBT_MARKETING_MODELO">
+          <ScalarProperty Name="CodMarketing" ColumnName="CodMarketing" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_MODELO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_MODELO">
+        <MappingFragment StoreEntitySet="TBT_MODELO">
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="CodProdutoFoto" ColumnName="CodProdutoFoto" />
+          <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+          <ScalarProperty Name="IndMidia" ColumnName="IndMidia" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="DataVigenciaInicial" ColumnName="DataVigenciaInicial" />
+          <ScalarProperty Name="DataVigenciaFinal" ColumnName="DataVigenciaFinal" />
+          <ScalarProperty Name="DataEntregaInicial" ColumnName="DataEntregaInicial" />
+          <ScalarProperty Name="DataEntregaFinal" ColumnName="DataEntregaFinal" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_MODELO_TABELA_PRECO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_MODELO_TABELA_PRECO">
+        <MappingFragment StoreEntitySet="TBT_MODELO_TABELA_PRECO">
+          <ScalarProperty Name="CodTabelaPreco" ColumnName="CodTabelaPreco" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+          <ScalarProperty Name="Preco" ColumnName="Preco" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_NIVEL1">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_NIVEL1">
+        <MappingFragment StoreEntitySet="TBT_NIVEL1">
+          <ScalarProperty Name="CodNivel1" ColumnName="CodNivel1" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_NIVEL2">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_NIVEL2">
+        <MappingFragment StoreEntitySet="TBT_NIVEL2">
+          <ScalarProperty Name="CodNivel2" ColumnName="CodNivel2" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_NOTA_FISCAL">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_NOTA_FISCAL">
+        <MappingFragment StoreEntitySet="TBT_NOTA_FISCAL">
+          <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="NumeroNF" ColumnName="NumeroNF" />
+          <ScalarProperty Name="SerieNF" ColumnName="SerieNF" />
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="DataEmissao" ColumnName="DataEmissao" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="CodSituacaoNotaFiscal" ColumnName="CodSituacaoNotaFiscal" />
+          <ScalarProperty Name="QtdTotal" ColumnName="QtdTotal" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PARAMETRO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PARAMETRO">
+        <MappingFragment StoreEntitySet="TBT_PARAMETRO">
+          <ScalarProperty Name="CodParametro" ColumnName="CodParametro" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PEDIDO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PEDIDO">
+        <MappingFragment StoreEntitySet="TBT_PEDIDO">
+          <ScalarProperty Name="CodPedido" ColumnName="CodPedido" />
+          <ScalarProperty Name="CodCarrinho" ColumnName="CodCarrinho" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="CodPessoaRepresentante" ColumnName="CodPessoaRepresentante" />
+          <ScalarProperty Name="CodPessoaPreposto" ColumnName="CodPessoaPreposto" />
+          <ScalarProperty Name="CodSituacaoPedido" ColumnName="CodSituacaoPedido" />
+          <ScalarProperty Name="CodTipoPedido" ColumnName="CodTipoPedido" />
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CodTabelaPreco" ColumnName="CodTabelaPreco" />
+          <ScalarProperty Name="CodCondicaoPagamento" ColumnName="CodCondicaoPagamento" />
+          <ScalarProperty Name="CodColecao" ColumnName="CodColecao" />
+          <ScalarProperty Name="CodAtendimento" ColumnName="CodAtendimento" />
+          <ScalarProperty Name="NumeroPedidoCliente" ColumnName="NumeroPedidoCliente" />
+          <ScalarProperty Name="DataEmissao" ColumnName="DataEmissao" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="QtdTotal" ColumnName="QtdTotal" />
+          <ScalarProperty Name="QtdFaturada" ColumnName="QtdFaturada" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="ValorTotalLiquido" ColumnName="ValorTotalLiquido" />
+          <ScalarProperty Name="OrdemCompra" ColumnName="OrdemCompra" />
+          <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
+          <ScalarProperty Name="PercentualDesconto" ColumnName="PercentualDesconto" />
+          <ScalarProperty Name="PercentualComissaoRep" ColumnName="PercentualComissaoRep" />
+          <ScalarProperty Name="CifFob" ColumnName="CifFob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="CodTransportadora" ColumnName="CodTransportadora" />
+          <ScalarProperty Name="CodRedespacho" ColumnName="CodRedespacho" />
+          <ScalarProperty Name="CodInstalacao" ColumnName="CodInstalacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PESSOA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PESSOA">
+        <MappingFragment StoreEntitySet="TBT_PESSOA">
+          <ScalarProperty Name="CodPessoa" ColumnName="CodPessoa" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodTipoPessoa" ColumnName="CodTipoPessoa" />
+          <ScalarProperty Name="CodTabelaPreco" ColumnName="CodTabelaPreco" />
+          <ScalarProperty Name="CodCondicaoPagamento" ColumnName="CodCondicaoPagamento" />
+          <ScalarProperty Name="CodPessoaTransportadora" ColumnName="CodPessoaTransportadora" />
+          <ScalarProperty Name="CodPessoaRedespacho" ColumnName="CodPessoaRedespacho" />
+          <ScalarProperty Name="PercentualDesconto" ColumnName="PercentualDesconto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CodPessoaERP" ColumnName="CodPessoaERP" />
+          <ScalarProperty Name="CodPessoaAFV" ColumnName="CodPessoaAFV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PESSOA_CLIENTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PESSOA_CLIENTE">
+        <MappingFragment StoreEntitySet="TBT_PESSOA_CLIENTE">
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+          <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="CodGrupoCliente" ColumnName="CodGrupoCliente" />
+          <ScalarProperty Name="CodSituacaoCliente" ColumnName="CodSituacaoCliente" />
+          <ScalarProperty Name="CodCategoriaCliente" ColumnName="CodCategoriaCliente" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailNFE" ColumnName="EmailNFE" />
+          <ScalarProperty Name="Telefone1" ColumnName="Telefone1" />
+          <ScalarProperty Name="Telefone2" ColumnName="Telefone2" />
+          <ScalarProperty Name="Contato" ColumnName="Contato" />
+          <ScalarProperty Name="InscricaoEstadual" ColumnName="InscricaoEstadual" />
+          <ScalarProperty Name="PrioridadeVenda" ColumnName="PrioridadeVenda" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PESSOA_COND_PGTO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PESSOA_COND_PGTO">
+        <MappingFragment StoreEntitySet="TBT_PESSOA_COND_PGTO">
+          <ScalarProperty Name="CodPessoa" ColumnName="CodPessoa" />
+          <ScalarProperty Name="CodCondicaoPagamento" ColumnName="CodCondicaoPagamento" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PESSOA_MARCA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PESSOA_MARCA">
+        <MappingFragment StoreEntitySet="TBT_PESSOA_MARCA">
+          <ScalarProperty Name="CodPessoa" ColumnName="CodPessoa" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="TipoAcesso" ColumnName="TipoAcesso" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PORTADOR">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PORTADOR">
+        <MappingFragment StoreEntitySet="TBT_PORTADOR">
+          <ScalarProperty Name="CodPortador" ColumnName="CodPortador" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PRODUTO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PRODUTO">
+        <MappingFragment StoreEntitySet="TBT_PRODUTO">
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="CodLinha" ColumnName="CodLinha" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="DescricaoCompleta" ColumnName="DescricaoCompleta" />
+          <ScalarProperty Name="DescricaoMaterial" ColumnName="DescricaoMaterial" />
+          <ScalarProperty Name="DescricaoCor" ColumnName="DescricaoCor" />
+          <ScalarProperty Name="CodBarra" ColumnName="CodBarra" />
+          <ScalarProperty Name="Ranking" ColumnName="Ranking" />
+          <ScalarProperty Name="PrecoVenda" ColumnName="PrecoVenda" />
+          <ScalarProperty Name="CodNivel1" ColumnName="CodNivel1" />
+          <ScalarProperty Name="CodNivel2" ColumnName="CodNivel2" />
+          <ScalarProperty Name="CodGrupoProduto" ColumnName="CodGrupoProduto" />
+          <ScalarProperty Name="CodColecao" ColumnName="CodColecao" />
+          <ScalarProperty Name="CodCor" ColumnName="CodCor" />
+          <ScalarProperty Name="CodProdutoFoto" ColumnName="CodProdutoFoto" />
+          <ScalarProperty Name="IndProntaEntrega" ColumnName="IndProntaEntrega" />
+          <ScalarProperty Name="VendaBloqueada" ColumnName="VendaBloqueada" />
+          <ScalarProperty Name="DataFinalNovidade" ColumnName="DataFinalNovidade" />
+          <ScalarProperty Name="IndMidia" ColumnName="IndMidia" />
+          <ScalarProperty Name="Situacao" ColumnName="Situacao" />
+          <ScalarProperty Name="Dimensoes" ColumnName="Dimensoes" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PRODUTO_RELACIONADO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PRODUTO_RELACIONADO">
+        <MappingFragment StoreEntitySet="TBT_PRODUTO_RELACIONADO">
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodProdutoRelacionado" ColumnName="CodProdutoRelacionado" />
+          <ScalarProperty Name="CtrlOperacao" ColumnName="CtrlOperacao" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_PRODUTO_TAMANHO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_PRODUTO_TAMANHO">
+        <MappingFragment StoreEntitySet="TBT_PRODUTO_TAMANHO">
+          <ScalarProperty Name="CodProduto" ColumnName="CodProduto" />
+          <ScalarProperty Name="CodDerivacao" ColumnName="CodDerivacao" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_REPRESENTANTE_PREPOSTO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_REPRESENTANTE_PREPOSTO">
+        <MappingFragment StoreEntitySet="TBT_REPRESENTANTE_PREPOSTO">
+          <ScalarProperty Name="CodPessoaRepresentante" ColumnName="CodPessoaRepresentante" />
+          <ScalarProperty Name="CodPessoaPreposto" ColumnName="CodPessoaPreposto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_SITUACAO_CLIENTE">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_SITUACAO_CLIENTE">
+        <MappingFragment StoreEntitySet="TBT_SITUACAO_CLIENTE">
+          <ScalarProperty Name="CodSituacaoCliente" ColumnName="CodSituacaoCliente" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_SITUACAO_PEDIDO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_SITUACAO_PEDIDO">
+        <MappingFragment StoreEntitySet="TBT_SITUACAO_PEDIDO">
+          <ScalarProperty Name="CodSituacaoPedido" ColumnName="CodSituacaoPedido" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_SITUACAO_TITULO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_SITUACAO_TITULO">
+        <MappingFragment StoreEntitySet="TBT_SITUACAO_TITULO">
+          <ScalarProperty Name="CodSituacaoTitulo" ColumnName="CodSituacaoTitulo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_TABELA_PRECO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_TABELA_PRECO">
+        <MappingFragment StoreEntitySet="TBT_TABELA_PRECO">
+          <ScalarProperty Name="CodTabelaPreco" ColumnName="CodTabelaPreco" />
+          <ScalarProperty Name="Moeda" ColumnName="Moeda" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="DataInicioVigencia" ColumnName="DataInicioVigencia" />
+          <ScalarProperty Name="DataFinalVigencia" ColumnName="DataFinalVigencia" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_TIPO_MARKETING">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_TIPO_MARKETING">
+        <MappingFragment StoreEntitySet="TBT_TIPO_MARKETING">
+          <ScalarProperty Name="CodTipoMarketing" ColumnName="CodTipoMarketing" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_TIPO_PEDIDO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_TIPO_PEDIDO">
+        <MappingFragment StoreEntitySet="TBT_TIPO_PEDIDO">
+          <ScalarProperty Name="CodTipoPedido" ColumnName="CodTipoPedido" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_TIPO_PESSOA">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_TIPO_PESSOA">
+        <MappingFragment StoreEntitySet="TBT_TIPO_PESSOA">
+          <ScalarProperty Name="CodTipoPessoa" ColumnName="CodTipoPessoa" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_TITULO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_TITULO">
+        <MappingFragment StoreEntitySet="TBT_TITULO">
+          <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
+          <ScalarProperty Name="CodFilial" ColumnName="CodFilial" />
+          <ScalarProperty Name="NumeroTitulo" ColumnName="NumeroTitulo" />
+          <ScalarProperty Name="CodPessoaCliente" ColumnName="CodPessoaCliente" />
+          <ScalarProperty Name="CodSituacaoTitulo" ColumnName="CodSituacaoTitulo" />
+          <ScalarProperty Name="NumeroTituloBanco" ColumnName="NumeroTituloBanco" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="CodPortador" ColumnName="CodPortador" />
+          <ScalarProperty Name="DataVencimento" ColumnName="DataVencimento" />
+          <ScalarProperty Name="DataPagamento" ColumnName="DataPagamento" />
+          <ScalarProperty Name="ValorAberto" ColumnName="ValorAberto" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="ValorPago" ColumnName="ValorPago" />
+          <ScalarProperty Name="DataEmissao" ColumnName="DataEmissao" />
+          <ScalarProperty Name="CodFilialNF" ColumnName="CodFilialNF" />
+          <ScalarProperty Name="NumeroNF" ColumnName="NumeroNF" />
+          <ScalarProperty Name="SerieNF" ColumnName="SerieNF" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBT_USUARIO">
+      <EntityTypeMapping TypeName="SmartBagModel.TBT_USUARIO">
+        <MappingFragment StoreEntitySet="TBT_USUARIO">
+          <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
+          <ScalarProperty Name="CodPessoa" ColumnName="CodPessoa" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="IndAtivo" ColumnName="IndAtivo" />
+          <ScalarProperty Name="CodMarca" ColumnName="CodMarca" />
+          <ScalarProperty Name="TipoMercado" ColumnName="TipoMercado" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CtrlDataOperacao" ColumnName="CtrlDataOperacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMP_FOTO_ARQUIVO">
+      <EntityTypeMapping TypeName="SmartBagModel.TMP_FOTO_ARQUIVO">
+        <MappingFragment StoreEntitySet="TMP_FOTO_ARQUIVO">
+          <ScalarProperty Name="ArquivoFoto" ColumnName="ArquivoFoto" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="NomeFotoAjustado" ColumnName="NomeFotoAjustado" />
+          <ScalarProperty Name="CodModelo" ColumnName="CodModelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFV_LOG_ERRO_CARGA">
+      <EntityTypeMapping TypeName="SmartBagModel.AFV_LOG_ERRO_CARGA">
+        <MappingFragment StoreEntitySet="AFV_LOG_ERRO_CARGA">
+          <ScalarProperty Name="Tabela" ColumnName="Tabela" />
+          <ScalarProperty Name="DataErro" ColumnName="DataErro" />
+          <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+          <ScalarProperty Name="Comando" ColumnName="Comando" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

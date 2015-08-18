@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff72ca2acbb345958042595b753623a9" Name="Diagram1">
+        <EntityTypeShape EntityType="SmartBagModel.AFV_CAMPOS_SINCRONIZACAO_TBT" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_FOTO_MARCA" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_FOTO_PRODUTO" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_INSTALACAO" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_PARAMETRO_SINCRONIZACAO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_TABELA_SINCRONIZACAO_TBT" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_CARRINHO" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_CARTEIRA_CLIENTE" Width="1.5" PointX="11.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_COLECAO" Width="1.5" PointX="0.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_CONDICAO_PAGAMENTO" Width="1.5" PointX="3.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_CONFIGURACAO_NIVEL" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_COR" Width="1.5" PointX="6.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_CRITICA_CARRINHO" Width="1.5" PointX="5.25" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_DERIVACAO" Width="1.5" PointX="11.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_DERIVACAO_GRADE" Width="1.5" PointX="19.5" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_ENDERECO_CLIENTE" Width="1.5" PointX="16.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GERENTE_REPRESENTANTE" Width="1.5" PointX="8.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRADE" Width="1.5" PointX="9" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRADE_ITEM_CARRINHO" Width="1.5" PointX="13.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRADE_ITEM_PEDIDO" Width="1.5" PointX="16.5" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRADE_MODELO" Width="1.5" PointX="14.25" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRUPO_CLIENTE" Width="1.5" PointX="12" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_GRUPO_PRODUTO" Width="1.5" PointX="6.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_ITEM_CARRINHO" Width="1.5" PointX="11.25" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_ITEM_PEDIDO" Width="1.5" PointX="14.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_ITEM_PRONTA_ENTREGA" Width="1.5" PointX="16.5" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_LINHA" Width="1.5" PointX="4.5" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_MARCA" Width="1.5" PointX="9" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_MARKETING" Width="1.5" PointX="9.75" PointY="69" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_MARKETING_MODELO" Width="1.5" PointX="12" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_MODELO" Width="1.5" PointX="6.75" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_MODELO_TABELA_PRECO" Width="1.5" PointX="6" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_NIVEL1" Width="1.5" PointX="6.75" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_NIVEL2" Width="1.5" PointX="6.75" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_NOTA_FISCAL" Width="1.5" PointX="16.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PARAMETRO" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PEDIDO" Width="1.5" PointX="9" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PESSOA" Width="1.5" PointX="6" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PESSOA_CLIENTE" Width="1.5" PointX="14.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PESSOA_COND_PGTO" Width="1.5" PointX="11.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PESSOA_MARCA" Width="1.5" PointX="11.25" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PORTADOR" Width="1.5" PointX="17.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PRODUTO" Width="1.5" PointX="9" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PRODUTO_RELACIONADO" Width="1.5" PointX="11.25" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_PRODUTO_TAMANHO" Width="1.5" PointX="13.5" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_REPRESENTANTE_PREPOSTO" Width="1.5" PointX="8.25" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_SITUACAO_CLIENTE" Width="1.5" PointX="12" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_SITUACAO_PEDIDO" Width="1.5" PointX="0.75" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_SITUACAO_TITULO" Width="1.5" PointX="17.25" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_TABELA_PRECO" Width="1.5" PointX="0.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_TIPO_MARKETING" Width="1.5" PointX="7.5" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_TIPO_PEDIDO" Width="1.5" PointX="0.75" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_TIPO_PESSOA" Width="1.5" PointX="3.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_TITULO" Width="1.5" PointX="19.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TBT_USUARIO" Width="1.5" PointX="8.25" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.TMP_FOTO_ARQUIVO" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartBagModel.AFV_LOG_ERRO_CARGA" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SmartBagModel.FK_AFV_TABELA_SINCRONIZACAO_TBT_AFV_CAMPOS_SINCRONIZACAO_TBT" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CARRINHO_TBT_CRITICA_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CARRINHO_TBT_ITEM_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_COLECAO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CONDICAO_PAGAMENTO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MARCA_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_CARRI32" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_SITUACAO_PEDIDO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TABELA_PRECO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TIPO_PEDIDO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_USUARIO_TBT_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_CARTEIRA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_CARTEIRA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_COLECAO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_COLECAO_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CONDICAO_PAGAMENTO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA_COND_PGTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_COR_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_DERIVACAO_TBT_DERIVACAO_GRADE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_DERIVACAO_TBT_GRADE_ITEM_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_DERIVACAO_TBT_GRADE_ITEM_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_DERIVACAO_TBT_ITEM_PRONTA_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_DERIVACAO_TBT_PRODUTO_TAMANHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRADE_TBT_DERIVACAO_GRADE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_ENDERECO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA44" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA76" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRADE_TBT_GRADE_MODELO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRADE_TBT_ITEM_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRADE_TBT_ITEM_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRADE_TBT_ITEM_PRONTA_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_ITEM_CARRINHO_TBT_GRADE_ITEM_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_ITEM_PEDIDO_TBT_GRADE_ITEM_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MODELO_TBT_GRADE_MODELO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRUPO_CLIENTE_TBT_PESSOA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_GRUPO_PRODUTO_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_ITEM_CARRINHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PEDIDO_TBT_ITEM_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_ITEM_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_ITEM_PRONTA_ENTREGA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_LINHA_TBT_MODELO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MARCA_TBT_LINHA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MARCA_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MARCA_TBT_PESSOA_MARCA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MARKETING_TBT_MARKETING_MODELO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TIPO_MARKETING_TBT_MARKETING" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MODELO_TBT_MARKETING_MODELO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MODELO_TBT_MODELO_TABELA_PR80" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MODELO_TBT_MODELO_TABELA_PRECO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_MODELO_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PR79" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PRECO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_NIVEL1_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_NIVEL2_TBT_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_NOTA_FISCAL" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_PED52" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_SITUACAO_PEDIDO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TABELA_PRECO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TIPO_PEDIDO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_USUARIO_TBT_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_PESSOA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_PESSOA_COND_PGTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_PESSOA_MARCA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPO63" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPOSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_TBT_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TABELA_PRECO_TBT_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_TIPO_PESSOA_TBT_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PESSOA_CLIENTE_TBT_TITULO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_SITUACAO_CLIENTE_TBT_PESSOA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PORTADOR_TBT_TITULO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_PRODUTO_RELACION15" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_PRODUTO_RELACIONADO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_PRODUTO_TBT_PRODUTO_TAMANHO" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartBagModel.FK_TBT_SITUACAO_TITULO_TBT_TITULO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

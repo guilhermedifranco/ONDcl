@@ -1,0 +1,126 @@
+﻿@model  List<Web.Messages.Marketing>
+@using PagedList.Mvc;
+
+    <!-- header logo: style can be found in header.less -->
+    <div class="wrapper row-offcanvas row-offcanvas-left" style="margin-left: 15px; margin-top: -50px">
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Pesquisar Marketing
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="~/Home/Inicio"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Marketing</li>
+                    <li class="active">Pesquisa</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- /.box --><!-- /.box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-6">
+                        <!-- /.box --><!-- /.box -->
+                    </div><!-- /.col -->
+                </div>
+
+                @htmlHelpers.HelperConfirmation(TempData["Marketing"], TempData["Message"])
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">
+                                    <img id="Right" onclick="showHide('menu'); return false;" src="~/Content/Imagens/RightArrow.png" />
+                                    <img id="Down" onclick="showHide('menu'); return false;" src="~/Content/Imagens/DownArrow.png" style="display: none" />
+                                    Filtros
+                                </h3>
+                                <div class="box-tools">
+                                    <div style="float: right;">
+                                        <form action="~/MARKETING/Create"><button type="submit" class="btn btn-primary">Novo</button></form>
+                                    </div>
+                                </div>
+                            </div><!-- /.box-header -->
+                            @using (Ajax.BeginForm("Pesquisa", "MARKETING", new AjaxOptions
+                            {
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "_PartialMarketing"
+
+                            }))
+                            {
+                                <div class="row" id="menu" style="display: none;">
+                                    <!-- accepted payments column -->
+                                    <div class="col-xs-6">
+                                        <div role="form">
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label>Título</label>
+                                                    @Html.TextBox("Titulo", "", htmlAttributes: new { @class = "form-control" })
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Tipo de Marketing</label>
+                                                    @Html.DropDownList("TipoMarketing", null, "--Selecione um Tipo--", htmlAttributes: new { @class = "form-control", id = "TipoMarketing" })
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary" id="pesquisar" onclick="showHide('menu');">Search</button>
+                                                </div>
+
+                                            </div><!-- /.box-body -->
+                                        </div>
+                                    </div><!-- /.col -->
+                                    <div class="col-xs-6">
+                                        <form role="form">
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label>Descrição</label>
+                                                    @Html.TextArea("Descricao", "", htmlAttributes: new { @class = "form-control" })
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Status</label>
+                                                    @Html.DropDownList("Status", null, "--Selecione um Status--", htmlAttributes: new { @class = "form-control", id = "TipoMarketing" })
+                                                </div>
+                                            </div><!-- /.box-body -->
+                                        </form>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            }
+                        </div><!-- /.Fim dos Filtros<-->
+                    </div>
+                </div>
+                <div id="_PartialMarketing">
+                    @Html.Partial("_PartialMarketing", Model)
+                </div>
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+    @section scripts
+    {
+
+        <script type="text/javascript">
+            function showHide(obj) {
+                var div = document.getElementById(obj);
+                if (div.style.display == 'none') {
+                    div.style.display = '';
+                    document.getElementById('Down').style.display = '';
+                    document.getElementById('Right').style.display = 'none';
+                }
+                else {
+                    div.style.display = 'none';
+                    document.getElementById('Down').style.display = 'none';
+                    document.getElementById('Right').style.display = '';
+                }
+            }
+        </script>
+
+
+
+
+
+    }

@@ -1,0 +1,55 @@
+USE [IDB_CANATIBA]
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[RefTBT_PESSOA831]') AND parent_object_id = OBJECT_ID(N'[dbo].[TBT_USUARIO]'))
+ALTER TABLE [dbo].[TBT_USUARIO] DROP CONSTRAINT [RefTBT_PESSOA831]
+GO
+
+USE [IDB_CANATIBA]
+GO
+
+/****** Object:  Table [dbo].[TBT_USUARIO]    Script Date: 05/22/2015 11:32:50 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TBT_USUARIO]') AND type in (N'U'))
+DROP TABLE [dbo].[TBT_USUARIO]
+GO
+
+USE [IDB_CANATIBA]
+GO
+
+/****** Object:  Table [dbo].[TBT_USUARIO]    Script Date: 05/22/2015 11:32:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TBT_USUARIO](
+	[CodUsuario] [numeric](8, 0) IDENTITY(1,1) NOT NULL,
+	[CodPessoa] [varchar](31) NOT NULL,
+	[Login] [varchar](40) NOT NULL,
+	[Senha] [varchar](20) NOT NULL,
+	[IndAtivo] [numeric](1, 0) NOT NULL,
+	[ID] [numeric](15, 0) NULL,
+	[CtrlDataOperacao] [datetime] NULL,
+ CONSTRAINT [PK_TBT_USUARIO] PRIMARY KEY NONCLUSTERED 
+(
+	[CodUsuario] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[TBT_USUARIO]  WITH CHECK ADD  CONSTRAINT [RefTBT_PESSOA831] FOREIGN KEY([CodPessoa])
+REFERENCES [dbo].[TBT_PESSOA] ([CodPessoa])
+GO
+
+ALTER TABLE [dbo].[TBT_USUARIO] CHECK CONSTRAINT [RefTBT_PESSOA831]
+GO
+
+

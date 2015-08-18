@@ -1,0 +1,2181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartBagModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AFV_CAMPOS_SINCRONIZACAO_TBT">
+    <Key>
+      <PropertyRef Name="NOMETABELA" />
+      <PropertyRef Name="ORIGEM" />
+    </Key>
+    <Property Name="NOMETABELA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ORIGEM" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESTINO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AFV_FOTO_MARCA">
+    <Key>
+      <PropertyRef Name="CodFotoMarca" />
+    </Key>
+    <Property Name="CodFotoMarca" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodFoto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Imagem" Type="image" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlOperacao" Type="varchar" MaxLength="1" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AFV_FOTO_PRODUTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodProdutoFoto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Imagem" Type="image" Nullable="false" />
+    <Property Name="CtrlOperacao" Type="varchar" MaxLength="1" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="IDExterno" Type="numeric" Precision="20" Scale="0" />
+  </EntityType>
+  <EntityType Name="AFV_INSTALACAO">
+    <Key>
+      <PropertyRef Name="CodInstalacao" />
+    </Key>
+    <Property Name="CodInstalacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataHora" Type="datetime" />
+    <Property Name="NomeMaquina" Type="varchar" MaxLength="30" />
+    <Property Name="Ip" Type="varchar" MaxLength="100" />
+    <Property Name="Login" Type="varchar" MaxLength="20" />
+    <Property Name="Dispositivo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'INTERMIDIA.dbo.AFV_LOG_ERRO_CARGA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AFV_LOG_ERRO_CARGA">
+    <Key>
+      <PropertyRef Name="Tabela" />
+      <PropertyRef Name="DataErro" />
+      <PropertyRef Name="Mensagem" />
+      <PropertyRef Name="Comando" />
+    </Key>
+    <Property Name="Tabela" Type="varchar(max)" Nullable="false" />
+    <Property Name="DataErro" Type="datetime" Nullable="false" />
+    <Property Name="Mensagem" Type="varchar(max)" Nullable="false" />
+    <Property Name="Comando" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AFV_PARAMETRO_SINCRONIZACAO">
+    <Key>
+      <PropertyRef Name="CodParametro" />
+    </Key>
+    <Property Name="CodParametro" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Valor" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AFV_TABELA_SINCRONIZACAO_TBT">
+    <Key>
+      <PropertyRef Name="NomeTabela" />
+    </Key>
+    <Property Name="NomeTabela" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoSincronizacao" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Alias" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="IndGenerica" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="Ordem" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="IndBackup" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="IndDelete" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="TipoAcaoTabela" Type="varchar" MaxLength="5" />
+    <Property Name="UltimaAtualizacao" Type="datetime" />
+    <Property Name="MaxRegister" Type="int" />
+    <Property Name="TipoCargaERP" Type="varchar" MaxLength="2" />
+    <Property Name="Dispositivo" Type="varchar" MaxLength="100" />
+    <Property Name="NomeTabelaCliente" Type="varchar" MaxLength="100" />
+    <Property Name="ComandoConsulta" Type="varchar" MaxLength="18" />
+    <Property Name="ComandoConsultaCount" Type="varchar" MaxLength="18" />
+    <Property Name="ComandoExportacaoCliente" Type="varchar" MaxLength="18" />
+    <Property Name="ComandoSincronizacao" Type="varchar" MaxLength="18" />
+    <Property Name="ComandoAtualizacao" Type="varchar" MaxLength="18" />
+    <Property Name="ComandoControleFluxo" Type="varchar" MaxLength="18" />
+    <Property Name="Essencial" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_CARRINHO">
+    <Key>
+      <PropertyRef Name="CodCarrinho" />
+    </Key>
+    <Property Name="CodCarrinho" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodPedido" Type="varchar" MaxLength="20" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaRepresentante" Type="varchar" MaxLength="50" />
+    <Property Name="CodPessoaPreposto" Type="varchar" MaxLength="50" />
+    <Property Name="CodSituacaoPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodTipoPedido" Type="varchar" MaxLength="30" />
+    <Property Name="CodUsuario" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CodTabelaPreco" Type="varchar" MaxLength="20" />
+    <Property Name="CodCondicaoPagamento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodColecao" Type="varchar" MaxLength="20" />
+    <Property Name="CodAtendimento" Type="varchar" MaxLength="20" />
+    <Property Name="DataEmissao" Type="datetime" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="QtdTotal" Type="int" />
+    <Property Name="ValorTotal" Type="numeric" Precision="17" Scale="2" />
+    <Property Name="ValorTotalLiquido" Type="numeric" Precision="17" Scale="2" />
+    <Property Name="OrdemCompra" Type="varchar" MaxLength="30" />
+    <Property Name="Observacoes" Type="varchar" MaxLength="1000" />
+    <Property Name="PercentualDesconto" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="PercentualComissaoRep" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="CifFob" Type="varchar" MaxLength="1" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="20" />
+    <Property Name="CodTransportadora" Type="varchar" MaxLength="20" />
+    <Property Name="CodRedespacho" Type="varchar" MaxLength="20" />
+    <Property Name="CodPedidoOrigem" Type="varchar" MaxLength="20" />
+    <Property Name="CodInstalacao" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_CARTEIRA_CLIENTE">
+    <Key>
+      <PropertyRef Name="CodPessoa" />
+      <PropertyRef Name="CodPessoaCliente" />
+    </Key>
+    <Property Name="CodPessoa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IndPrincipal" Type="int" Nullable="false" />
+    <Property Name="Comissao" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_COLECAO">
+    <Key>
+      <PropertyRef Name="CodColecao" />
+    </Key>
+    <Property Name="CodColecao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IndAtivo" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_CONDICAO_PAGAMENTO">
+    <Key>
+      <PropertyRef Name="CodCondicaoPagamento" />
+    </Key>
+    <Property Name="CodCondicaoPagamento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PrazoMedio" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="QtdParcela" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="ValorMinimoParcela" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="PercentualDesconto" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_CONFIGURACAO_NIVEL">
+    <Key>
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodNivel" />
+    </Key>
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodNivel" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_COR">
+    <Key>
+      <PropertyRef Name="CodCor" />
+    </Key>
+    <Property Name="CodCor" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IndAtivo" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_CRITICA_CARRINHO">
+    <Key>
+      <PropertyRef Name="CodCarrinho" />
+      <PropertyRef Name="SeqCritica" />
+    </Key>
+    <Property Name="CodCarrinho" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SeqCritica" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="Critica" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="CodItemCarrinho" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CodGradeItemCarrinho" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CtrlOperacao" Type="varchar" MaxLength="1" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_DERIVACAO">
+    <Key>
+      <PropertyRef Name="CodDerivacao" />
+    </Key>
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="CodSubGrade" Type="int" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_DERIVACAO_GRADE">
+    <Key>
+      <PropertyRef Name="CodDerivacao" />
+      <PropertyRef Name="CodGrade" />
+    </Key>
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Ordem" Type="numeric" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="Qtd" Type="int" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_ENDERECO_CLIENTE">
+    <Key>
+      <PropertyRef Name="CodPessoaCliente" />
+      <PropertyRef Name="SeqEndereco" />
+    </Key>
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SeqEndereco" Type="int" Nullable="false" />
+    <Property Name="UF" Type="varchar" MaxLength="2" />
+    <Property Name="Cidade" Type="varchar" MaxLength="60" />
+    <Property Name="Endereco" Type="varchar" MaxLength="100" />
+    <Property Name="Numero" Type="varchar" MaxLength="20" />
+    <Property Name="Complemento" Type="varchar" MaxLength="100" />
+    <Property Name="Bairro" Type="varchar" MaxLength="75" />
+    <Property Name="Telefone" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="CEP" Type="varchar" MaxLength="30" />
+    <Property Name="IndComercial" Type="int" Nullable="false" />
+    <Property Name="IndResidencial" Type="int" Nullable="false" />
+    <Property Name="IndCobranca" Type="int" Nullable="false" />
+    <Property Name="IndEntrega" Type="int" Nullable="false" />
+    <Property Name="IndContato" Type="int" Nullable="false" />
+    <Property Name="IndPrincipal" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_GERENTE_REPRESENTANTE">
+    <Key>
+      <PropertyRef Name="CodPessoaGerente" />
+      <PropertyRef Name="CodPessoaRepresentante" />
+    </Key>
+    <Property Name="CodPessoaGerente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaRepresentante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_GRADE">
+    <Key>
+      <PropertyRef Name="CodGrade" />
+    </Key>
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TamanhoCaixa" Type="int" />
+    <Property Name="IndAtivo" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_GRADE_ITEM_CARRINHO">
+    <Key>
+      <PropertyRef Name="CodCarrinho" />
+      <PropertyRef Name="CodItemCarrinho" />
+      <PropertyRef Name="CodGradeItemCarrinho" />
+    </Key>
+    <Property Name="CodCarrinho" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodItemCarrinho" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CodGradeItemCarrinho" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Qtd" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="CodInstalacao" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_GRADE_ITEM_PEDIDO">
+    <Key>
+      <PropertyRef Name="CodPedido" />
+      <PropertyRef Name="CodItemPedido" />
+      <PropertyRef Name="CodGradeItemPedido" />
+    </Key>
+    <Property Name="CodPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodItemPedido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodGradeItemPedido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Qtd" Type="numeric" Precision="14" Scale="5" Nullable="false" />
+    <Property Name="QtdFaturada" Type="numeric" Precision="14" Scale="5" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_GRADE_MODELO">
+    <Key>
+      <PropertyRef Name="CodGrade" />
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodLinha" />
+      <PropertyRef Name="CodModelo" />
+    </Key>
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="CodProporcionalidade" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBT_GRUPO_CLIENTE">
+    <Key>
+      <PropertyRef Name="CodGrupoCliente" />
+    </Key>
+    <Property Name="CodGrupoCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="40" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_GRUPO_PRODUTO">
+    <Key>
+      <PropertyRef Name="CodGrupoProduto" />
+    </Key>
+    <Property Name="CodGrupoProduto" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_ITEM_CARRINHO">
+    <Key>
+      <PropertyRef Name="CodCarrinho" />
+      <PropertyRef Name="CodItemCarrinho" />
+    </Key>
+    <Property Name="CodCarrinho" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodItemCarrinho" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="QtdCaixa" Type="numeric" Precision="4" Scale="0" />
+    <Property Name="QtdTotal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ValorUnitario" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="ValorUnitarioLiquido" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="PercDesc" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="CodInstalacao" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_ITEM_PEDIDO">
+    <Key>
+      <PropertyRef Name="CodPedido" />
+      <PropertyRef Name="CodItemPedido" />
+    </Key>
+    <Property Name="CodPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodItemPedido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="QtdCaixa" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="QtdTotal" Type="numeric" Precision="38" Scale="5" />
+    <Property Name="QtdFaturada" Type="numeric" Precision="38" Scale="5" />
+    <Property Name="ValorUnitario" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="ValorUnitarioLiquido" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="ValorTotal" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="CodEmpresa" Type="varchar" MaxLength="4" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="4" />
+    <Property Name="SerieNF" Type="varchar" MaxLength="3" />
+    <Property Name="NumeroNF" Type="varchar" MaxLength="6" />
+    <Property Name="PercentualDesconto" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_ITEM_PRONTA_ENTREGA">
+    <Key>
+      <PropertyRef Name="CodItemProntaEntrega" />
+    </Key>
+    <Property Name="CodItemProntaEntrega" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" />
+    <Property Name="CodGrade" Type="varchar" MaxLength="20" />
+    <Property Name="QtdCaixa" Type="numeric" Precision="38" Scale="6" />
+    <Property Name="Quantidade" Type="numeric" Precision="38" Scale="5" />
+    <Property Name="ID" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_LINHA">
+    <Key>
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodLinha" />
+    </Key>
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_MARCA">
+    <Key>
+      <PropertyRef Name="CodMarca" />
+    </Key>
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_MARKETING">
+    <Key>
+      <PropertyRef Name="CodMarketing" />
+    </Key>
+    <Property Name="CodMarketing" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="CodTipoMarketing" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" />
+    <Property Name="Titulo" Type="varchar" MaxLength="100" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="TipoArquivo" Type="varchar" MaxLength="3" />
+    <Property Name="NomeArquivo" Type="varchar" MaxLength="255" />
+    <Property Name="CodColecao" Type="varchar" MaxLength="10" />
+    <Property Name="IndAtivo" Type="int" Nullable="false" />
+    <Property Name="IndDestaque" Type="int" Nullable="false" />
+    <Property Name="Publicacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_MARKETING_MODELO">
+    <Key>
+      <PropertyRef Name="CodMarketing" />
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodLinha" />
+      <PropertyRef Name="CodModelo" />
+    </Key>
+    <Property Name="CodMarketing" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_MODELO">
+    <Key>
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodLinha" />
+      <PropertyRef Name="CodModelo" />
+    </Key>
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="CodProdutoFoto" Type="varchar" MaxLength="100" />
+    <Property Name="Ranking" Type="int" />
+    <Property Name="IndMidia" Type="int" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="4" />
+    <Property Name="DataVigenciaInicial" Type="datetime" />
+    <Property Name="DataVigenciaFinal" Type="datetime" />
+    <Property Name="DataEntregaInicial" Type="datetime" />
+    <Property Name="DataEntregaFinal" Type="datetime" />
+    <Property Name="Empresa" Type="varchar" MaxLength="20" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_MODELO_TABELA_PRECO">
+    <Key>
+      <PropertyRef Name="CodTabelaPreco" />
+      <PropertyRef Name="CodMarca" />
+      <PropertyRef Name="CodLinha" />
+      <PropertyRef Name="CodModelo" />
+    </Key>
+    <Property Name="CodTabelaPreco" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Preco" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_NIVEL1">
+    <Key>
+      <PropertyRef Name="CodNivel1" />
+    </Key>
+    <Property Name="CodNivel1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_NIVEL2">
+    <Key>
+      <PropertyRef Name="CodNivel2" />
+    </Key>
+    <Property Name="CodNivel2" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_NOTA_FISCAL">
+    <Key>
+      <PropertyRef Name="CodFilial" />
+      <PropertyRef Name="NumeroNF" />
+      <PropertyRef Name="SerieNF" />
+    </Key>
+    <Property Name="CodEmpresa" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NumeroNF" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="SerieNF" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataEmissao" Type="datetime" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="CodSituacaoNotaFiscal" Type="int" Nullable="false" />
+    <Property Name="QtdTotal" Type="numeric" Precision="14" Scale="5" />
+    <Property Name="ValorTotal" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PARAMETRO">
+    <Key>
+      <PropertyRef Name="CodParametro" />
+    </Key>
+    <Property Name="CodParametro" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Valor" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PEDIDO">
+    <Key>
+      <PropertyRef Name="CodPedido" />
+    </Key>
+    <Property Name="CodPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodCarrinho" Type="varchar" MaxLength="30" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaRepresentante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaPreposto" Type="varchar" MaxLength="50" />
+    <Property Name="CodSituacaoPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodTipoPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CodUsuario" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CodTabelaPreco" Type="varchar" MaxLength="20" />
+    <Property Name="CodCondicaoPagamento" Type="varchar" MaxLength="100" />
+    <Property Name="CodColecao" Type="varchar" MaxLength="20" />
+    <Property Name="CodAtendimento" Type="varchar" MaxLength="30" />
+    <Property Name="NumeroPedidoCliente" Type="varchar" MaxLength="30" />
+    <Property Name="DataEmissao" Type="datetime" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="QtdTotal" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="QtdFaturada" Type="numeric" Precision="8" Scale="0" />
+    <Property Name="ValorTotal" Type="numeric" Precision="8" Scale="4" />
+    <Property Name="ValorTotalLiquido" Type="numeric" Precision="17" Scale="2" />
+    <Property Name="OrdemCompra" Type="varchar" MaxLength="20" />
+    <Property Name="Observacoes" Type="varchar" MaxLength="500" />
+    <Property Name="PercentualDesconto" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="PercentualComissaoRep" Type="numeric" Precision="20" Scale="4" />
+    <Property Name="CifFob" Type="varchar" MaxLength="1" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="30" />
+    <Property Name="CodTransportadora" Type="varchar" MaxLength="30" />
+    <Property Name="CodRedespacho" Type="varchar" MaxLength="30" />
+    <Property Name="CodInstalacao" Type="int" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PESSOA">
+    <Key>
+      <PropertyRef Name="CodPessoa" />
+    </Key>
+    <Property Name="CodPessoa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+    <Property Name="CodTipoPessoa" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CodTabelaPreco" Type="varchar" MaxLength="20" />
+    <Property Name="CodCondicaoPagamento" Type="varchar" MaxLength="100" />
+    <Property Name="CodPessoaTransportadora" Type="varchar" MaxLength="50" />
+    <Property Name="CodPessoaRedespacho" Type="varchar" MaxLength="50" />
+    <Property Name="PercentualDesconto" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="CodPessoaERP" Type="varchar" MaxLength="31" />
+    <Property Name="CodPessoaAFV" Type="varchar" MaxLength="31" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PESSOA_CLIENTE">
+    <Key>
+      <PropertyRef Name="CodPessoaCliente" />
+    </Key>
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RazaoSocial" Type="varchar" MaxLength="200" />
+    <Property Name="NomeFantasia" Type="varchar" MaxLength="200" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="30" />
+    <Property Name="CodGrupoCliente" Type="varchar" MaxLength="50" />
+    <Property Name="CodSituacaoCliente" Type="varchar" MaxLength="10" />
+    <Property Name="CodCategoriaCliente" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="EmailNFE" Type="varchar" MaxLength="100" />
+    <Property Name="Telefone1" Type="varchar" MaxLength="50" />
+    <Property Name="Telefone2" Type="varchar" MaxLength="50" />
+    <Property Name="Contato" Type="varchar" MaxLength="50" />
+    <Property Name="InscricaoEstadual" Type="varchar" MaxLength="30" />
+    <Property Name="PrioridadeVenda" Type="varchar" MaxLength="20" />
+    <Property Name="DataCadastro" Type="datetime" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PESSOA_COND_PGTO">
+    <Key>
+      <PropertyRef Name="CodPessoa" />
+      <PropertyRef Name="CodCondicaoPagamento" />
+    </Key>
+    <Property Name="CodPessoa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodCondicaoPagamento" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PESSOA_MARCA">
+    <Key>
+      <PropertyRef Name="CodPessoa" />
+      <PropertyRef Name="CodMarca" />
+    </Key>
+    <Property Name="CodPessoa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="TipoAcesso" Type="varchar" MaxLength="1" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PORTADOR">
+    <Key>
+      <PropertyRef Name="CodPortador" />
+    </Key>
+    <Property Name="CodPortador" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PRODUTO">
+    <Key>
+      <PropertyRef Name="CodProduto" />
+    </Key>
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CodLinha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="DescricaoCompleta" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoMaterial" Type="varchar" MaxLength="200" />
+    <Property Name="DescricaoCor" Type="varchar" MaxLength="200" />
+    <Property Name="CodBarra" Type="varchar" MaxLength="13" />
+    <Property Name="Ranking" Type="int" />
+    <Property Name="PrecoVenda" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="CodNivel1" Type="varchar" MaxLength="20" />
+    <Property Name="CodNivel2" Type="varchar" MaxLength="20" />
+    <Property Name="CodGrupoProduto" Type="varchar" MaxLength="20" />
+    <Property Name="CodColecao" Type="varchar" MaxLength="20" />
+    <Property Name="CodCor" Type="varchar" MaxLength="20" />
+    <Property Name="CodProdutoFoto" Type="varchar" MaxLength="100" />
+    <Property Name="IndProntaEntrega" Type="int" Nullable="false" />
+    <Property Name="VendaBloqueada" Type="int" Nullable="false" />
+    <Property Name="DataFinalNovidade" Type="varchar" MaxLength="30" />
+    <Property Name="IndMidia" Type="int" Nullable="false" />
+    <Property Name="Situacao" Type="varchar" MaxLength="1" />
+    <Property Name="Dimensoes" Type="varchar" MaxLength="100" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_PRODUTO_RELACIONADO">
+    <Key>
+      <PropertyRef Name="CodProduto" />
+      <PropertyRef Name="CodProdutoRelacionado" />
+    </Key>
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodProdutoRelacionado" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CtrlOperacao" Type="varchar" MaxLength="1" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBT_PRODUTO_TAMANHO">
+    <Key>
+      <PropertyRef Name="CodProduto" />
+      <PropertyRef Name="CodDerivacao" />
+    </Key>
+    <Property Name="CodProduto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodDerivacao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IndAtivo" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_REPRESENTANTE_PREPOSTO">
+    <Key>
+      <PropertyRef Name="CodPessoaRepresentante" />
+      <PropertyRef Name="CodPessoaPreposto" />
+    </Key>
+    <Property Name="CodPessoaRepresentante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodPessoaPreposto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_SITUACAO_CLIENTE">
+    <Key>
+      <PropertyRef Name="CodSituacaoCliente" />
+    </Key>
+    <Property Name="CodSituacaoCliente" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_SITUACAO_PEDIDO">
+    <Key>
+      <PropertyRef Name="CodSituacaoPedido" />
+    </Key>
+    <Property Name="CodSituacaoPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_SITUACAO_TITULO">
+    <Key>
+      <PropertyRef Name="CodSituacaoTitulo" />
+    </Key>
+    <Property Name="CodSituacaoTitulo" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_TABELA_PRECO">
+    <Key>
+      <PropertyRef Name="CodTabelaPreco" />
+    </Key>
+    <Property Name="CodTabelaPreco" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Moeda" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DataInicioVigencia" Type="datetime" />
+    <Property Name="DataFinalVigencia" Type="datetime" />
+    <Property Name="Tipo" Type="numeric" Precision="4" Scale="0" />
+    <Property Name="IndAtivo" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_TIPO_MARKETING">
+    <Key>
+      <PropertyRef Name="CodTipoMarketing" />
+    </Key>
+    <Property Name="CodTipoMarketing" Type="decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_TIPO_PEDIDO">
+    <Key>
+      <PropertyRef Name="CodTipoPedido" />
+    </Key>
+    <Property Name="CodTipoPedido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_TIPO_PESSOA">
+    <Key>
+      <PropertyRef Name="CodTipoPessoa" />
+    </Key>
+    <Property Name="CodTipoPessoa" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_TITULO">
+    <Key>
+      <PropertyRef Name="CodEmpresa" />
+      <PropertyRef Name="CodFilial" />
+      <PropertyRef Name="NumeroTitulo" />
+      <PropertyRef Name="Tipo" />
+    </Key>
+    <Property Name="CodEmpresa" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CodFilial" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NumeroTitulo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodPessoaCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodSituacaoTitulo" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumeroTituloBanco" Type="int" />
+    <Property Name="Tipo" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="CodPortador" Type="varchar" MaxLength="30" />
+    <Property Name="DataVencimento" Type="datetime" />
+    <Property Name="DataPagamento" Type="datetime" />
+    <Property Name="ValorAberto" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="ValorTotal" Type="numeric" Precision="15" Scale="2" />
+    <Property Name="ValorPago" Type="int" />
+    <Property Name="DataEmissao" Type="datetime" />
+    <Property Name="CodFilialNF" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NumeroNF" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="SerieNF" Type="varchar" MaxLength="3" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBT_USUARIO">
+    <Key>
+      <PropertyRef Name="CodUsuario" />
+    </Key>
+    <Property Name="CodUsuario" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CodPessoa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="30" />
+    <Property Name="Senha" Type="varchar" MaxLength="10" />
+    <Property Name="IndAtivo" Type="int" Nullable="false" />
+    <Property Name="CodMarca" Type="varchar" MaxLength="15" />
+    <Property Name="TipoMercado" Type="varchar" MaxLength="1" />
+    <Property Name="ID" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CtrlDataOperacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TMP_FOTO_ARQUIVO">
+    <Key>
+      <PropertyRef Name="ArquivoFoto" />
+    </Key>
+    <Property Name="ArquivoFoto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ano" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NomeFotoAjustado" Type="varchar" MaxLength="100" />
+    <Property Name="CodModelo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AFV_TABELA_SINCRONIZACAO_TBT_AFV_CAMPOS_SINCRONIZACAO_TBT">
+    <End Role="AFV_TABELA_SINCRONIZACAO_TBT" Type="Self.AFV_TABELA_SINCRONIZACAO_TBT" Multiplicity="1" />
+    <End Role="AFV_CAMPOS_SINCRONIZACAO_TBT" Type="Self.AFV_CAMPOS_SINCRONIZACAO_TBT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AFV_TABELA_SINCRONIZACAO_TBT">
+        <PropertyRef Name="NomeTabela" />
+      </Principal>
+      <Dependent Role="AFV_CAMPOS_SINCRONIZACAO_TBT">
+        <PropertyRef Name="NOMETABELA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CARRINHO_TBT_CRITICA_CARRINHO">
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="1" />
+    <End Role="TBT_CRITICA_CARRINHO" Type="Self.TBT_CRITICA_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+      </Principal>
+      <Dependent Role="TBT_CRITICA_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CARRINHO_TBT_ITEM_CARRINHO">
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="1" />
+    <End Role="TBT_ITEM_CARRINHO" Type="Self.TBT_ITEM_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_COLECAO_TBT_CARRINHO">
+    <End Role="TBT_COLECAO" Type="Self.TBT_COLECAO" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_COLECAO">
+        <PropertyRef Name="CodColecao" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodColecao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_COLECAO_TBT_PEDIDO">
+    <End Role="TBT_COLECAO" Type="Self.TBT_COLECAO" Multiplicity="0..1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_COLECAO">
+        <PropertyRef Name="CodColecao" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodColecao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_COLECAO_TBT_PRODUTO">
+    <End Role="TBT_COLECAO" Type="Self.TBT_COLECAO" Multiplicity="0..1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_COLECAO">
+        <PropertyRef Name="CodColecao" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodColecao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_CARRINHO">
+    <End Role="TBT_CONDICAO_PAGAMENTO" Type="Self.TBT_CONDICAO_PAGAMENTO" Multiplicity="1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CONDICAO_PAGAMENTO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PEDIDO">
+    <End Role="TBT_CONDICAO_PAGAMENTO" Type="Self.TBT_CONDICAO_PAGAMENTO" Multiplicity="0..1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CONDICAO_PAGAMENTO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA">
+    <End Role="TBT_CONDICAO_PAGAMENTO" Type="Self.TBT_CONDICAO_PAGAMENTO" Multiplicity="0..1" />
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CONDICAO_PAGAMENTO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA_COND_PGTO">
+    <End Role="TBT_CONDICAO_PAGAMENTO" Type="Self.TBT_CONDICAO_PAGAMENTO" Multiplicity="1" />
+    <End Role="TBT_PESSOA_COND_PGTO" Type="Self.TBT_PESSOA_COND_PGTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_CONDICAO_PAGAMENTO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_COND_PGTO">
+        <PropertyRef Name="CodCondicaoPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_COR_TBT_PRODUTO">
+    <End Role="TBT_COR" Type="Self.TBT_COR" Multiplicity="0..1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_COR">
+        <PropertyRef Name="CodCor" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodCor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_DERIVACAO_TBT_DERIVACAO_GRADE">
+    <End Role="TBT_DERIVACAO" Type="Self.TBT_DERIVACAO" Multiplicity="1" />
+    <End Role="TBT_DERIVACAO_GRADE" Type="Self.TBT_DERIVACAO_GRADE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_DERIVACAO">
+        <PropertyRef Name="CodDerivacao" />
+      </Principal>
+      <Dependent Role="TBT_DERIVACAO_GRADE">
+        <PropertyRef Name="CodDerivacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_DERIVACAO_TBT_GRADE_ITEM_CARRINHO">
+    <End Role="TBT_DERIVACAO" Type="Self.TBT_DERIVACAO" Multiplicity="1" />
+    <End Role="TBT_GRADE_ITEM_CARRINHO" Type="Self.TBT_GRADE_ITEM_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_DERIVACAO">
+        <PropertyRef Name="CodDerivacao" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_ITEM_CARRINHO">
+        <PropertyRef Name="CodDerivacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_DERIVACAO_TBT_GRADE_ITEM_PEDIDO">
+    <End Role="TBT_DERIVACAO" Type="Self.TBT_DERIVACAO" Multiplicity="1" />
+    <End Role="TBT_GRADE_ITEM_PEDIDO" Type="Self.TBT_GRADE_ITEM_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_DERIVACAO">
+        <PropertyRef Name="CodDerivacao" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_ITEM_PEDIDO">
+        <PropertyRef Name="CodDerivacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_DERIVACAO_TBT_ITEM_PRONTA_ENTREGA">
+    <End Role="TBT_DERIVACAO" Type="Self.TBT_DERIVACAO" Multiplicity="0..1" />
+    <End Role="TBT_ITEM_PRONTA_ENTREGA" Type="Self.TBT_ITEM_PRONTA_ENTREGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_DERIVACAO">
+        <PropertyRef Name="CodDerivacao" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PRONTA_ENTREGA">
+        <PropertyRef Name="CodDerivacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_DERIVACAO_TBT_PRODUTO_TAMANHO">
+    <End Role="TBT_DERIVACAO" Type="Self.TBT_DERIVACAO" Multiplicity="1" />
+    <End Role="TBT_PRODUTO_TAMANHO" Type="Self.TBT_PRODUTO_TAMANHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_DERIVACAO">
+        <PropertyRef Name="CodDerivacao" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO_TAMANHO">
+        <PropertyRef Name="CodDerivacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRADE_TBT_DERIVACAO_GRADE">
+    <End Role="TBT_GRADE" Type="Self.TBT_GRADE" Multiplicity="1" />
+    <End Role="TBT_DERIVACAO_GRADE" Type="Self.TBT_DERIVACAO_GRADE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Principal>
+      <Dependent Role="TBT_DERIVACAO_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRADE_TBT_GRADE_MODELO">
+    <End Role="TBT_GRADE" Type="Self.TBT_GRADE" Multiplicity="1" />
+    <End Role="TBT_GRADE_MODELO" Type="Self.TBT_GRADE_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_MODELO">
+        <PropertyRef Name="CodGrade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRADE_TBT_ITEM_CARRINHO">
+    <End Role="TBT_GRADE" Type="Self.TBT_GRADE" Multiplicity="0..1" />
+    <End Role="TBT_ITEM_CARRINHO" Type="Self.TBT_ITEM_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_CARRINHO">
+        <PropertyRef Name="CodGrade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRADE_TBT_ITEM_PEDIDO">
+    <End Role="TBT_GRADE" Type="Self.TBT_GRADE" Multiplicity="0..1" />
+    <End Role="TBT_ITEM_PEDIDO" Type="Self.TBT_ITEM_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PEDIDO">
+        <PropertyRef Name="CodGrade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRADE_TBT_ITEM_PRONTA_ENTREGA">
+    <End Role="TBT_GRADE" Type="Self.TBT_GRADE" Multiplicity="0..1" />
+    <End Role="TBT_ITEM_PRONTA_ENTREGA" Type="Self.TBT_ITEM_PRONTA_ENTREGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRADE">
+        <PropertyRef Name="CodGrade" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PRONTA_ENTREGA">
+        <PropertyRef Name="CodGrade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRUPO_CLIENTE_TBT_PESSOA_CLIENTE">
+    <End Role="TBT_GRUPO_CLIENTE" Type="Self.TBT_GRUPO_CLIENTE" Multiplicity="0..1" />
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRUPO_CLIENTE">
+        <PropertyRef Name="CodGrupoCliente" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodGrupoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_GRUPO_PRODUTO_TBT_PRODUTO">
+    <End Role="TBT_GRUPO_PRODUTO" Type="Self.TBT_GRUPO_PRODUTO" Multiplicity="0..1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_GRUPO_PRODUTO">
+        <PropertyRef Name="CodGrupoProduto" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodGrupoProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_ITEM_CARRINHO_TBT_GRADE_ITEM_CARRINHO">
+    <End Role="TBT_ITEM_CARRINHO" Type="Self.TBT_ITEM_CARRINHO" Multiplicity="1" />
+    <End Role="TBT_GRADE_ITEM_CARRINHO" Type="Self.TBT_GRADE_ITEM_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_ITEM_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+        <PropertyRef Name="CodItemCarrinho" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_ITEM_CARRINHO">
+        <PropertyRef Name="CodCarrinho" />
+        <PropertyRef Name="CodItemCarrinho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_ITEM_PEDIDO_TBT_GRADE_ITEM_PEDIDO">
+    <End Role="TBT_ITEM_PEDIDO" Type="Self.TBT_ITEM_PEDIDO" Multiplicity="1" />
+    <End Role="TBT_GRADE_ITEM_PEDIDO" Type="Self.TBT_GRADE_ITEM_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_ITEM_PEDIDO">
+        <PropertyRef Name="CodPedido" />
+        <PropertyRef Name="CodItemPedido" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_ITEM_PEDIDO">
+        <PropertyRef Name="CodPedido" />
+        <PropertyRef Name="CodItemPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_LINHA_TBT_MODELO">
+    <End Role="TBT_LINHA" Type="Self.TBT_LINHA" Multiplicity="1" />
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_LINHA">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+      </Principal>
+      <Dependent Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MARCA_TBT_CARRINHO">
+    <End Role="TBT_MARCA" Type="Self.TBT_MARCA" Multiplicity="1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MARCA">
+        <PropertyRef Name="CodMarca" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MARCA_TBT_LINHA">
+    <End Role="TBT_MARCA" Type="Self.TBT_MARCA" Multiplicity="1" />
+    <End Role="TBT_LINHA" Type="Self.TBT_LINHA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MARCA">
+        <PropertyRef Name="CodMarca" />
+      </Principal>
+      <Dependent Role="TBT_LINHA">
+        <PropertyRef Name="CodMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MARCA_TBT_PEDIDO">
+    <End Role="TBT_MARCA" Type="Self.TBT_MARCA" Multiplicity="1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MARCA">
+        <PropertyRef Name="CodMarca" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MARCA_TBT_PESSOA_MARCA">
+    <End Role="TBT_MARCA" Type="Self.TBT_MARCA" Multiplicity="1" />
+    <End Role="TBT_PESSOA_MARCA" Type="Self.TBT_PESSOA_MARCA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MARCA">
+        <PropertyRef Name="CodMarca" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_MARCA">
+        <PropertyRef Name="CodMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MARKETING_TBT_MARKETING_MODELO">
+    <End Role="TBT_MARKETING" Type="Self.TBT_MARKETING" Multiplicity="1" />
+    <End Role="TBT_MARKETING_MODELO" Type="Self.TBT_MARKETING_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MARKETING">
+        <PropertyRef Name="CodMarketing" />
+      </Principal>
+      <Dependent Role="TBT_MARKETING_MODELO">
+        <PropertyRef Name="CodMarketing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MODELO_TBT_GRADE_MODELO">
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="1" />
+    <End Role="TBT_GRADE_MODELO" Type="Self.TBT_GRADE_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Principal>
+      <Dependent Role="TBT_GRADE_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MODELO_TBT_MARKETING_MODELO">
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="1" />
+    <End Role="TBT_MARKETING_MODELO" Type="Self.TBT_MARKETING_MODELO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Principal>
+      <Dependent Role="TBT_MARKETING_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MODELO_TBT_MODELO_TABELA_PR80">
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="1" />
+    <End Role="TBT_MODELO_TABELA_PRECO" Type="Self.TBT_MODELO_TABELA_PRECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Principal>
+      <Dependent Role="TBT_MODELO_TABELA_PRECO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MODELO_TBT_MODELO_TABELA_PRECO">
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="1" />
+    <End Role="TBT_MODELO_TABELA_PRECO" Type="Self.TBT_MODELO_TABELA_PRECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Principal>
+      <Dependent Role="TBT_MODELO_TABELA_PRECO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_MODELO_TBT_PRODUTO">
+    <End Role="TBT_MODELO" Type="Self.TBT_MODELO" Multiplicity="1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_MODELO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodMarca" />
+        <PropertyRef Name="CodLinha" />
+        <PropertyRef Name="CodModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_NIVEL1_TBT_PRODUTO">
+    <End Role="TBT_NIVEL1" Type="Self.TBT_NIVEL1" Multiplicity="0..1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_NIVEL1">
+        <PropertyRef Name="CodNivel1" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodNivel1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_NIVEL2_TBT_PRODUTO">
+    <End Role="TBT_NIVEL2" Type="Self.TBT_NIVEL2" Multiplicity="0..1" />
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_NIVEL2">
+        <PropertyRef Name="CodNivel2" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO">
+        <PropertyRef Name="CodNivel2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PEDIDO_TBT_ITEM_PEDIDO">
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="1" />
+    <End Role="TBT_ITEM_PEDIDO" Type="Self.TBT_ITEM_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PEDIDO">
+        <PropertyRef Name="CodPedido" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PEDIDO">
+        <PropertyRef Name="CodPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_CARRINHO">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_CARTEIRA_CLIENTE">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_CARTEIRA_CLIENTE" Type="Self.TBT_CARTEIRA_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_CARTEIRA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_ENDERECO_CLIENTE">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_ENDERECO_CLIENTE" Type="Self.TBT_ENDERECO_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_ENDERECO_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_NOTA_FISCAL">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_NOTA_FISCAL" Type="Self.TBT_NOTA_FISCAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_NOTA_FISCAL">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_PEDIDO">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_CLIENTE_TBT_TITULO">
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="1" />
+    <End Role="TBT_TITULO" Type="Self.TBT_TITULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Principal>
+      <Dependent Role="TBT_TITULO">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_CARRI32">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodPessoaPreposto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_CARRINHO">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodPessoaRepresentante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_CARTEIRA_CLIENTE">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_CARTEIRA_CLIENTE" Type="Self.TBT_CARTEIRA_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_CARTEIRA_CLIENTE">
+        <PropertyRef Name="CodPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA44">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_GERENTE_REPRESENTANTE" Type="Self.TBT_GERENTE_REPRESENTANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_GERENTE_REPRESENTANTE">
+        <PropertyRef Name="CodPessoaGerente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA76">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_GERENTE_REPRESENTANTE" Type="Self.TBT_GERENTE_REPRESENTANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_GERENTE_REPRESENTANTE">
+        <PropertyRef Name="CodPessoaRepresentante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_PED52">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodPessoaRepresentante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_PEDIDO">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="0..1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodPessoaPreposto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_PESSOA_CLIENTE">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodPessoaCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_PESSOA_COND_PGTO">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_PESSOA_COND_PGTO" Type="Self.TBT_PESSOA_COND_PGTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_COND_PGTO">
+        <PropertyRef Name="CodPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_PESSOA_MARCA">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_PESSOA_MARCA" Type="Self.TBT_PESSOA_MARCA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_MARCA">
+        <PropertyRef Name="CodPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPO63">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_REPRESENTANTE_PREPOSTO" Type="Self.TBT_REPRESENTANTE_PREPOSTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_REPRESENTANTE_PREPOSTO">
+        <PropertyRef Name="CodPessoaRepresentante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPOSTO">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_REPRESENTANTE_PREPOSTO" Type="Self.TBT_REPRESENTANTE_PREPOSTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_REPRESENTANTE_PREPOSTO">
+        <PropertyRef Name="CodPessoaPreposto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PESSOA_TBT_USUARIO">
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="1" />
+    <End Role="TBT_USUARIO" Type="Self.TBT_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PESSOA">
+        <PropertyRef Name="CodPessoa" />
+      </Principal>
+      <Dependent Role="TBT_USUARIO">
+        <PropertyRef Name="CodPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PORTADOR_TBT_TITULO">
+    <End Role="TBT_PORTADOR" Type="Self.TBT_PORTADOR" Multiplicity="0..1" />
+    <End Role="TBT_TITULO" Type="Self.TBT_TITULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PORTADOR">
+        <PropertyRef Name="CodPortador" />
+      </Principal>
+      <Dependent Role="TBT_TITULO">
+        <PropertyRef Name="CodPortador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_ITEM_CARRINHO">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_ITEM_CARRINHO" Type="Self.TBT_ITEM_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_CARRINHO">
+        <PropertyRef Name="CodProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_ITEM_PEDIDO">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_ITEM_PEDIDO" Type="Self.TBT_ITEM_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PEDIDO">
+        <PropertyRef Name="CodProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_ITEM_PRONTA_ENTREGA">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_ITEM_PRONTA_ENTREGA" Type="Self.TBT_ITEM_PRONTA_ENTREGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_ITEM_PRONTA_ENTREGA">
+        <PropertyRef Name="CodProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_PRODUTO_RELACION15">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_PRODUTO_RELACIONADO" Type="Self.TBT_PRODUTO_RELACIONADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO_RELACIONADO">
+        <PropertyRef Name="CodProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_PRODUTO_RELACIONADO">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_PRODUTO_RELACIONADO" Type="Self.TBT_PRODUTO_RELACIONADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO_RELACIONADO">
+        <PropertyRef Name="CodProdutoRelacionado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_PRODUTO_TBT_PRODUTO_TAMANHO">
+    <End Role="TBT_PRODUTO" Type="Self.TBT_PRODUTO" Multiplicity="1" />
+    <End Role="TBT_PRODUTO_TAMANHO" Type="Self.TBT_PRODUTO_TAMANHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_PRODUTO">
+        <PropertyRef Name="CodProduto" />
+      </Principal>
+      <Dependent Role="TBT_PRODUTO_TAMANHO">
+        <PropertyRef Name="CodProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_SITUACAO_CLIENTE_TBT_PESSOA_CLIENTE">
+    <End Role="TBT_SITUACAO_CLIENTE" Type="Self.TBT_SITUACAO_CLIENTE" Multiplicity="0..1" />
+    <End Role="TBT_PESSOA_CLIENTE" Type="Self.TBT_PESSOA_CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_SITUACAO_CLIENTE">
+        <PropertyRef Name="CodSituacaoCliente" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA_CLIENTE">
+        <PropertyRef Name="CodSituacaoCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_SITUACAO_PEDIDO_TBT_CARRINHO">
+    <End Role="TBT_SITUACAO_PEDIDO" Type="Self.TBT_SITUACAO_PEDIDO" Multiplicity="1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_SITUACAO_PEDIDO">
+        <PropertyRef Name="CodSituacaoPedido" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodSituacaoPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_SITUACAO_PEDIDO_TBT_PEDIDO">
+    <End Role="TBT_SITUACAO_PEDIDO" Type="Self.TBT_SITUACAO_PEDIDO" Multiplicity="1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_SITUACAO_PEDIDO">
+        <PropertyRef Name="CodSituacaoPedido" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodSituacaoPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_SITUACAO_TITULO_TBT_TITULO">
+    <End Role="TBT_SITUACAO_TITULO" Type="Self.TBT_SITUACAO_TITULO" Multiplicity="1" />
+    <End Role="TBT_TITULO" Type="Self.TBT_TITULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_SITUACAO_TITULO">
+        <PropertyRef Name="CodSituacaoTitulo" />
+      </Principal>
+      <Dependent Role="TBT_TITULO">
+        <PropertyRef Name="CodSituacaoTitulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TABELA_PRECO_TBT_CARRINHO">
+    <End Role="TBT_TABELA_PRECO" Type="Self.TBT_TABELA_PRECO" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PR79">
+    <End Role="TBT_TABELA_PRECO" Type="Self.TBT_TABELA_PRECO" Multiplicity="1" />
+    <End Role="TBT_MODELO_TABELA_PRECO" Type="Self.TBT_MODELO_TABELA_PRECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Principal>
+      <Dependent Role="TBT_MODELO_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PRECO">
+    <End Role="TBT_TABELA_PRECO" Type="Self.TBT_TABELA_PRECO" Multiplicity="1" />
+    <End Role="TBT_MODELO_TABELA_PRECO" Type="Self.TBT_MODELO_TABELA_PRECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Principal>
+      <Dependent Role="TBT_MODELO_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TABELA_PRECO_TBT_PEDIDO">
+    <End Role="TBT_TABELA_PRECO" Type="Self.TBT_TABELA_PRECO" Multiplicity="0..1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TABELA_PRECO_TBT_PESSOA">
+    <End Role="TBT_TABELA_PRECO" Type="Self.TBT_TABELA_PRECO" Multiplicity="0..1" />
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TABELA_PRECO">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA">
+        <PropertyRef Name="CodTabelaPreco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TIPO_MARKETING_TBT_MARKETING">
+    <End Role="TBT_TIPO_MARKETING" Type="Self.TBT_TIPO_MARKETING" Multiplicity="1" />
+    <End Role="TBT_MARKETING" Type="Self.TBT_MARKETING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TIPO_MARKETING">
+        <PropertyRef Name="CodTipoMarketing" />
+      </Principal>
+      <Dependent Role="TBT_MARKETING">
+        <PropertyRef Name="CodTipoMarketing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TIPO_PEDIDO_TBT_CARRINHO">
+    <End Role="TBT_TIPO_PEDIDO" Type="Self.TBT_TIPO_PEDIDO" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TIPO_PEDIDO">
+        <PropertyRef Name="CodTipoPedido" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodTipoPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TIPO_PEDIDO_TBT_PEDIDO">
+    <End Role="TBT_TIPO_PEDIDO" Type="Self.TBT_TIPO_PEDIDO" Multiplicity="1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TIPO_PEDIDO">
+        <PropertyRef Name="CodTipoPedido" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodTipoPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_TIPO_PESSOA_TBT_PESSOA">
+    <End Role="TBT_TIPO_PESSOA" Type="Self.TBT_TIPO_PESSOA" Multiplicity="1" />
+    <End Role="TBT_PESSOA" Type="Self.TBT_PESSOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_TIPO_PESSOA">
+        <PropertyRef Name="CodTipoPessoa" />
+      </Principal>
+      <Dependent Role="TBT_PESSOA">
+        <PropertyRef Name="CodTipoPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_USUARIO_TBT_CARRINHO">
+    <End Role="TBT_USUARIO" Type="Self.TBT_USUARIO" Multiplicity="0..1" />
+    <End Role="TBT_CARRINHO" Type="Self.TBT_CARRINHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_USUARIO">
+        <PropertyRef Name="CodUsuario" />
+      </Principal>
+      <Dependent Role="TBT_CARRINHO">
+        <PropertyRef Name="CodUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBT_USUARIO_TBT_PEDIDO">
+    <End Role="TBT_USUARIO" Type="Self.TBT_USUARIO" Multiplicity="0..1" />
+    <End Role="TBT_PEDIDO" Type="Self.TBT_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBT_USUARIO">
+        <PropertyRef Name="CodUsuario" />
+      </Principal>
+      <Dependent Role="TBT_PEDIDO">
+        <PropertyRef Name="CodUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SmartBagModelStoreContainer">
+    <EntitySet Name="AFV_CAMPOS_SINCRONIZACAO_TBT" EntityType="Self.AFV_CAMPOS_SINCRONIZACAO_TBT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_FOTO_MARCA" EntityType="Self.AFV_FOTO_MARCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_FOTO_PRODUTO" EntityType="Self.AFV_FOTO_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_INSTALACAO" EntityType="Self.AFV_INSTALACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_PARAMETRO_SINCRONIZACAO" EntityType="Self.AFV_PARAMETRO_SINCRONIZACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_TABELA_SINCRONIZACAO_TBT" EntityType="Self.AFV_TABELA_SINCRONIZACAO_TBT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_CARRINHO" EntityType="Self.TBT_CARRINHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_CARTEIRA_CLIENTE" EntityType="Self.TBT_CARTEIRA_CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_COLECAO" EntityType="Self.TBT_COLECAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_CONDICAO_PAGAMENTO" EntityType="Self.TBT_CONDICAO_PAGAMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_CONFIGURACAO_NIVEL" EntityType="Self.TBT_CONFIGURACAO_NIVEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_COR" EntityType="Self.TBT_COR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_CRITICA_CARRINHO" EntityType="Self.TBT_CRITICA_CARRINHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_DERIVACAO" EntityType="Self.TBT_DERIVACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_DERIVACAO_GRADE" EntityType="Self.TBT_DERIVACAO_GRADE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_ENDERECO_CLIENTE" EntityType="Self.TBT_ENDERECO_CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GERENTE_REPRESENTANTE" EntityType="Self.TBT_GERENTE_REPRESENTANTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRADE" EntityType="Self.TBT_GRADE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRADE_ITEM_CARRINHO" EntityType="Self.TBT_GRADE_ITEM_CARRINHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRADE_ITEM_PEDIDO" EntityType="Self.TBT_GRADE_ITEM_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRADE_MODELO" EntityType="Self.TBT_GRADE_MODELO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRUPO_CLIENTE" EntityType="Self.TBT_GRUPO_CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_GRUPO_PRODUTO" EntityType="Self.TBT_GRUPO_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_ITEM_CARRINHO" EntityType="Self.TBT_ITEM_CARRINHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_ITEM_PEDIDO" EntityType="Self.TBT_ITEM_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_ITEM_PRONTA_ENTREGA" EntityType="Self.TBT_ITEM_PRONTA_ENTREGA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_LINHA" EntityType="Self.TBT_LINHA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_MARCA" EntityType="Self.TBT_MARCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_MARKETING" EntityType="Self.TBT_MARKETING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_MARKETING_MODELO" EntityType="Self.TBT_MARKETING_MODELO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_MODELO" EntityType="Self.TBT_MODELO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_MODELO_TABELA_PRECO" EntityType="Self.TBT_MODELO_TABELA_PRECO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_NIVEL1" EntityType="Self.TBT_NIVEL1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_NIVEL2" EntityType="Self.TBT_NIVEL2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_NOTA_FISCAL" EntityType="Self.TBT_NOTA_FISCAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PARAMETRO" EntityType="Self.TBT_PARAMETRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PEDIDO" EntityType="Self.TBT_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PESSOA" EntityType="Self.TBT_PESSOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PESSOA_CLIENTE" EntityType="Self.TBT_PESSOA_CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PESSOA_COND_PGTO" EntityType="Self.TBT_PESSOA_COND_PGTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PESSOA_MARCA" EntityType="Self.TBT_PESSOA_MARCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PORTADOR" EntityType="Self.TBT_PORTADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PRODUTO" EntityType="Self.TBT_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PRODUTO_RELACIONADO" EntityType="Self.TBT_PRODUTO_RELACIONADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_PRODUTO_TAMANHO" EntityType="Self.TBT_PRODUTO_TAMANHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_REPRESENTANTE_PREPOSTO" EntityType="Self.TBT_REPRESENTANTE_PREPOSTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_SITUACAO_CLIENTE" EntityType="Self.TBT_SITUACAO_CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_SITUACAO_PEDIDO" EntityType="Self.TBT_SITUACAO_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_SITUACAO_TITULO" EntityType="Self.TBT_SITUACAO_TITULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_TABELA_PRECO" EntityType="Self.TBT_TABELA_PRECO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_TIPO_MARKETING" EntityType="Self.TBT_TIPO_MARKETING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_TIPO_PEDIDO" EntityType="Self.TBT_TIPO_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_TIPO_PESSOA" EntityType="Self.TBT_TIPO_PESSOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_TITULO" EntityType="Self.TBT_TITULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBT_USUARIO" EntityType="Self.TBT_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TMP_FOTO_ARQUIVO" EntityType="Self.TMP_FOTO_ARQUIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFV_LOG_ERRO_CARGA" EntityType="Self.AFV_LOG_ERRO_CARGA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AFV_LOG_ERRO_CARGA].[Tabela] AS [Tabela], 
+    [AFV_LOG_ERRO_CARGA].[DataErro] AS [DataErro], 
+    [AFV_LOG_ERRO_CARGA].[Mensagem] AS [Mensagem], 
+    [AFV_LOG_ERRO_CARGA].[Comando] AS [Comando]
+    FROM [dbo].[AFV_LOG_ERRO_CARGA] AS [AFV_LOG_ERRO_CARGA]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AFV_TABELA_SINCRONIZACAO_TBT_AFV_CAMPOS_SINCRONIZACAO_TBT" Association="Self.FK_AFV_TABELA_SINCRONIZACAO_TBT_AFV_CAMPOS_SINCRONIZACAO_TBT">
+      <End Role="AFV_TABELA_SINCRONIZACAO_TBT" EntitySet="AFV_TABELA_SINCRONIZACAO_TBT" />
+      <End Role="AFV_CAMPOS_SINCRONIZACAO_TBT" EntitySet="AFV_CAMPOS_SINCRONIZACAO_TBT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CARRINHO_TBT_CRITICA_CARRINHO" Association="Self.FK_TBT_CARRINHO_TBT_CRITICA_CARRINHO">
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+      <End Role="TBT_CRITICA_CARRINHO" EntitySet="TBT_CRITICA_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CARRINHO_TBT_ITEM_CARRINHO" Association="Self.FK_TBT_CARRINHO_TBT_ITEM_CARRINHO">
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+      <End Role="TBT_ITEM_CARRINHO" EntitySet="TBT_ITEM_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_COLECAO_TBT_CARRINHO" Association="Self.FK_TBT_COLECAO_TBT_CARRINHO">
+      <End Role="TBT_COLECAO" EntitySet="TBT_COLECAO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_COLECAO_TBT_PEDIDO" Association="Self.FK_TBT_COLECAO_TBT_PEDIDO">
+      <End Role="TBT_COLECAO" EntitySet="TBT_COLECAO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_COLECAO_TBT_PRODUTO" Association="Self.FK_TBT_COLECAO_TBT_PRODUTO">
+      <End Role="TBT_COLECAO" EntitySet="TBT_COLECAO" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_CARRINHO" Association="Self.FK_TBT_CONDICAO_PAGAMENTO_TBT_CARRINHO">
+      <End Role="TBT_CONDICAO_PAGAMENTO" EntitySet="TBT_CONDICAO_PAGAMENTO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PEDIDO" Association="Self.FK_TBT_CONDICAO_PAGAMENTO_TBT_PEDIDO">
+      <End Role="TBT_CONDICAO_PAGAMENTO" EntitySet="TBT_CONDICAO_PAGAMENTO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA" Association="Self.FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA">
+      <End Role="TBT_CONDICAO_PAGAMENTO" EntitySet="TBT_CONDICAO_PAGAMENTO" />
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA_COND_PGTO" Association="Self.FK_TBT_CONDICAO_PAGAMENTO_TBT_PESSOA_COND_PGTO">
+      <End Role="TBT_CONDICAO_PAGAMENTO" EntitySet="TBT_CONDICAO_PAGAMENTO" />
+      <End Role="TBT_PESSOA_COND_PGTO" EntitySet="TBT_PESSOA_COND_PGTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_COR_TBT_PRODUTO" Association="Self.FK_TBT_COR_TBT_PRODUTO">
+      <End Role="TBT_COR" EntitySet="TBT_COR" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_DERIVACAO_TBT_DERIVACAO_GRADE" Association="Self.FK_TBT_DERIVACAO_TBT_DERIVACAO_GRADE">
+      <End Role="TBT_DERIVACAO" EntitySet="TBT_DERIVACAO" />
+      <End Role="TBT_DERIVACAO_GRADE" EntitySet="TBT_DERIVACAO_GRADE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_DERIVACAO_TBT_GRADE_ITEM_CARRINHO" Association="Self.FK_TBT_DERIVACAO_TBT_GRADE_ITEM_CARRINHO">
+      <End Role="TBT_DERIVACAO" EntitySet="TBT_DERIVACAO" />
+      <End Role="TBT_GRADE_ITEM_CARRINHO" EntitySet="TBT_GRADE_ITEM_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_DERIVACAO_TBT_GRADE_ITEM_PEDIDO" Association="Self.FK_TBT_DERIVACAO_TBT_GRADE_ITEM_PEDIDO">
+      <End Role="TBT_DERIVACAO" EntitySet="TBT_DERIVACAO" />
+      <End Role="TBT_GRADE_ITEM_PEDIDO" EntitySet="TBT_GRADE_ITEM_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_DERIVACAO_TBT_ITEM_PRONTA_ENTREGA" Association="Self.FK_TBT_DERIVACAO_TBT_ITEM_PRONTA_ENTREGA">
+      <End Role="TBT_DERIVACAO" EntitySet="TBT_DERIVACAO" />
+      <End Role="TBT_ITEM_PRONTA_ENTREGA" EntitySet="TBT_ITEM_PRONTA_ENTREGA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_DERIVACAO_TBT_PRODUTO_TAMANHO" Association="Self.FK_TBT_DERIVACAO_TBT_PRODUTO_TAMANHO">
+      <End Role="TBT_DERIVACAO" EntitySet="TBT_DERIVACAO" />
+      <End Role="TBT_PRODUTO_TAMANHO" EntitySet="TBT_PRODUTO_TAMANHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRADE_TBT_DERIVACAO_GRADE" Association="Self.FK_TBT_GRADE_TBT_DERIVACAO_GRADE">
+      <End Role="TBT_GRADE" EntitySet="TBT_GRADE" />
+      <End Role="TBT_DERIVACAO_GRADE" EntitySet="TBT_DERIVACAO_GRADE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRADE_TBT_GRADE_MODELO" Association="Self.FK_TBT_GRADE_TBT_GRADE_MODELO">
+      <End Role="TBT_GRADE" EntitySet="TBT_GRADE" />
+      <End Role="TBT_GRADE_MODELO" EntitySet="TBT_GRADE_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRADE_TBT_ITEM_CARRINHO" Association="Self.FK_TBT_GRADE_TBT_ITEM_CARRINHO">
+      <End Role="TBT_GRADE" EntitySet="TBT_GRADE" />
+      <End Role="TBT_ITEM_CARRINHO" EntitySet="TBT_ITEM_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRADE_TBT_ITEM_PEDIDO" Association="Self.FK_TBT_GRADE_TBT_ITEM_PEDIDO">
+      <End Role="TBT_GRADE" EntitySet="TBT_GRADE" />
+      <End Role="TBT_ITEM_PEDIDO" EntitySet="TBT_ITEM_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRADE_TBT_ITEM_PRONTA_ENTREGA" Association="Self.FK_TBT_GRADE_TBT_ITEM_PRONTA_ENTREGA">
+      <End Role="TBT_GRADE" EntitySet="TBT_GRADE" />
+      <End Role="TBT_ITEM_PRONTA_ENTREGA" EntitySet="TBT_ITEM_PRONTA_ENTREGA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRUPO_CLIENTE_TBT_PESSOA_CLIENTE" Association="Self.FK_TBT_GRUPO_CLIENTE_TBT_PESSOA_CLIENTE">
+      <End Role="TBT_GRUPO_CLIENTE" EntitySet="TBT_GRUPO_CLIENTE" />
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_GRUPO_PRODUTO_TBT_PRODUTO" Association="Self.FK_TBT_GRUPO_PRODUTO_TBT_PRODUTO">
+      <End Role="TBT_GRUPO_PRODUTO" EntitySet="TBT_GRUPO_PRODUTO" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_ITEM_CARRINHO_TBT_GRADE_ITEM_CARRINHO" Association="Self.FK_TBT_ITEM_CARRINHO_TBT_GRADE_ITEM_CARRINHO">
+      <End Role="TBT_ITEM_CARRINHO" EntitySet="TBT_ITEM_CARRINHO" />
+      <End Role="TBT_GRADE_ITEM_CARRINHO" EntitySet="TBT_GRADE_ITEM_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_ITEM_PEDIDO_TBT_GRADE_ITEM_PEDIDO" Association="Self.FK_TBT_ITEM_PEDIDO_TBT_GRADE_ITEM_PEDIDO">
+      <End Role="TBT_ITEM_PEDIDO" EntitySet="TBT_ITEM_PEDIDO" />
+      <End Role="TBT_GRADE_ITEM_PEDIDO" EntitySet="TBT_GRADE_ITEM_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_LINHA_TBT_MODELO" Association="Self.FK_TBT_LINHA_TBT_MODELO">
+      <End Role="TBT_LINHA" EntitySet="TBT_LINHA" />
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MARCA_TBT_CARRINHO" Association="Self.FK_TBT_MARCA_TBT_CARRINHO">
+      <End Role="TBT_MARCA" EntitySet="TBT_MARCA" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MARCA_TBT_LINHA" Association="Self.FK_TBT_MARCA_TBT_LINHA">
+      <End Role="TBT_MARCA" EntitySet="TBT_MARCA" />
+      <End Role="TBT_LINHA" EntitySet="TBT_LINHA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MARCA_TBT_PEDIDO" Association="Self.FK_TBT_MARCA_TBT_PEDIDO">
+      <End Role="TBT_MARCA" EntitySet="TBT_MARCA" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MARCA_TBT_PESSOA_MARCA" Association="Self.FK_TBT_MARCA_TBT_PESSOA_MARCA">
+      <End Role="TBT_MARCA" EntitySet="TBT_MARCA" />
+      <End Role="TBT_PESSOA_MARCA" EntitySet="TBT_PESSOA_MARCA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MARKETING_TBT_MARKETING_MODELO" Association="Self.FK_TBT_MARKETING_TBT_MARKETING_MODELO">
+      <End Role="TBT_MARKETING" EntitySet="TBT_MARKETING" />
+      <End Role="TBT_MARKETING_MODELO" EntitySet="TBT_MARKETING_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MODELO_TBT_GRADE_MODELO" Association="Self.FK_TBT_MODELO_TBT_GRADE_MODELO">
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+      <End Role="TBT_GRADE_MODELO" EntitySet="TBT_GRADE_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MODELO_TBT_MARKETING_MODELO" Association="Self.FK_TBT_MODELO_TBT_MARKETING_MODELO">
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+      <End Role="TBT_MARKETING_MODELO" EntitySet="TBT_MARKETING_MODELO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MODELO_TBT_MODELO_TABELA_PR80" Association="Self.FK_TBT_MODELO_TBT_MODELO_TABELA_PR80">
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+      <End Role="TBT_MODELO_TABELA_PRECO" EntitySet="TBT_MODELO_TABELA_PRECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MODELO_TBT_MODELO_TABELA_PRECO" Association="Self.FK_TBT_MODELO_TBT_MODELO_TABELA_PRECO">
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+      <End Role="TBT_MODELO_TABELA_PRECO" EntitySet="TBT_MODELO_TABELA_PRECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_MODELO_TBT_PRODUTO" Association="Self.FK_TBT_MODELO_TBT_PRODUTO">
+      <End Role="TBT_MODELO" EntitySet="TBT_MODELO" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_NIVEL1_TBT_PRODUTO" Association="Self.FK_TBT_NIVEL1_TBT_PRODUTO">
+      <End Role="TBT_NIVEL1" EntitySet="TBT_NIVEL1" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_NIVEL2_TBT_PRODUTO" Association="Self.FK_TBT_NIVEL2_TBT_PRODUTO">
+      <End Role="TBT_NIVEL2" EntitySet="TBT_NIVEL2" />
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PEDIDO_TBT_ITEM_PEDIDO" Association="Self.FK_TBT_PEDIDO_TBT_ITEM_PEDIDO">
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+      <End Role="TBT_ITEM_PEDIDO" EntitySet="TBT_ITEM_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_CARRINHO" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_CARRINHO">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_CARTEIRA_CLIENTE" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_CARTEIRA_CLIENTE">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_CARTEIRA_CLIENTE" EntitySet="TBT_CARTEIRA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_ENDERECO_CLIENTE" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_ENDERECO_CLIENTE">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_ENDERECO_CLIENTE" EntitySet="TBT_ENDERECO_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_NOTA_FISCAL" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_NOTA_FISCAL">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_NOTA_FISCAL" EntitySet="TBT_NOTA_FISCAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_PEDIDO" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_PEDIDO">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_CLIENTE_TBT_TITULO" Association="Self.FK_TBT_PESSOA_CLIENTE_TBT_TITULO">
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+      <End Role="TBT_TITULO" EntitySet="TBT_TITULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_CARRI32" Association="Self.FK_TBT_PESSOA_TBT_CARRI32">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_CARRINHO" Association="Self.FK_TBT_PESSOA_TBT_CARRINHO">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_CARTEIRA_CLIENTE" Association="Self.FK_TBT_PESSOA_TBT_CARTEIRA_CLIENTE">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_CARTEIRA_CLIENTE" EntitySet="TBT_CARTEIRA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA44" Association="Self.FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA44">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_GERENTE_REPRESENTANTE" EntitySet="TBT_GERENTE_REPRESENTANTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA76" Association="Self.FK_TBT_PESSOA_TBT_GERENTE_REPRESENTA76">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_GERENTE_REPRESENTANTE" EntitySet="TBT_GERENTE_REPRESENTANTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_PED52" Association="Self.FK_TBT_PESSOA_TBT_PED52">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_PEDIDO" Association="Self.FK_TBT_PESSOA_TBT_PEDIDO">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_PESSOA_CLIENTE" Association="Self.FK_TBT_PESSOA_TBT_PESSOA_CLIENTE">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_PESSOA_COND_PGTO" Association="Self.FK_TBT_PESSOA_TBT_PESSOA_COND_PGTO">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_PESSOA_COND_PGTO" EntitySet="TBT_PESSOA_COND_PGTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_PESSOA_MARCA" Association="Self.FK_TBT_PESSOA_TBT_PESSOA_MARCA">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_PESSOA_MARCA" EntitySet="TBT_PESSOA_MARCA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPO63" Association="Self.FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPO63">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_REPRESENTANTE_PREPOSTO" EntitySet="TBT_REPRESENTANTE_PREPOSTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPOSTO" Association="Self.FK_TBT_PESSOA_TBT_REPRESENTANTE_PREPOSTO">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_REPRESENTANTE_PREPOSTO" EntitySet="TBT_REPRESENTANTE_PREPOSTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PESSOA_TBT_USUARIO" Association="Self.FK_TBT_PESSOA_TBT_USUARIO">
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+      <End Role="TBT_USUARIO" EntitySet="TBT_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PORTADOR_TBT_TITULO" Association="Self.FK_TBT_PORTADOR_TBT_TITULO">
+      <End Role="TBT_PORTADOR" EntitySet="TBT_PORTADOR" />
+      <End Role="TBT_TITULO" EntitySet="TBT_TITULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_ITEM_CARRINHO" Association="Self.FK_TBT_PRODUTO_TBT_ITEM_CARRINHO">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_ITEM_CARRINHO" EntitySet="TBT_ITEM_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_ITEM_PEDIDO" Association="Self.FK_TBT_PRODUTO_TBT_ITEM_PEDIDO">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_ITEM_PEDIDO" EntitySet="TBT_ITEM_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_ITEM_PRONTA_ENTREGA" Association="Self.FK_TBT_PRODUTO_TBT_ITEM_PRONTA_ENTREGA">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_ITEM_PRONTA_ENTREGA" EntitySet="TBT_ITEM_PRONTA_ENTREGA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_PRODUTO_RELACION15" Association="Self.FK_TBT_PRODUTO_TBT_PRODUTO_RELACION15">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_PRODUTO_RELACIONADO" EntitySet="TBT_PRODUTO_RELACIONADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_PRODUTO_RELACIONADO" Association="Self.FK_TBT_PRODUTO_TBT_PRODUTO_RELACIONADO">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_PRODUTO_RELACIONADO" EntitySet="TBT_PRODUTO_RELACIONADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_PRODUTO_TBT_PRODUTO_TAMANHO" Association="Self.FK_TBT_PRODUTO_TBT_PRODUTO_TAMANHO">
+      <End Role="TBT_PRODUTO" EntitySet="TBT_PRODUTO" />
+      <End Role="TBT_PRODUTO_TAMANHO" EntitySet="TBT_PRODUTO_TAMANHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_SITUACAO_CLIENTE_TBT_PESSOA_CLIENTE" Association="Self.FK_TBT_SITUACAO_CLIENTE_TBT_PESSOA_CLIENTE">
+      <End Role="TBT_SITUACAO_CLIENTE" EntitySet="TBT_SITUACAO_CLIENTE" />
+      <End Role="TBT_PESSOA_CLIENTE" EntitySet="TBT_PESSOA_CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_SITUACAO_PEDIDO_TBT_CARRINHO" Association="Self.FK_TBT_SITUACAO_PEDIDO_TBT_CARRINHO">
+      <End Role="TBT_SITUACAO_PEDIDO" EntitySet="TBT_SITUACAO_PEDIDO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_SITUACAO_PEDIDO_TBT_PEDIDO" Association="Self.FK_TBT_SITUACAO_PEDIDO_TBT_PEDIDO">
+      <End Role="TBT_SITUACAO_PEDIDO" EntitySet="TBT_SITUACAO_PEDIDO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_SITUACAO_TITULO_TBT_TITULO" Association="Self.FK_TBT_SITUACAO_TITULO_TBT_TITULO">
+      <End Role="TBT_SITUACAO_TITULO" EntitySet="TBT_SITUACAO_TITULO" />
+      <End Role="TBT_TITULO" EntitySet="TBT_TITULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TABELA_PRECO_TBT_CARRINHO" Association="Self.FK_TBT_TABELA_PRECO_TBT_CARRINHO">
+      <End Role="TBT_TABELA_PRECO" EntitySet="TBT_TABELA_PRECO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PR79" Association="Self.FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PR79">
+      <End Role="TBT_TABELA_PRECO" EntitySet="TBT_TABELA_PRECO" />
+      <End Role="TBT_MODELO_TABELA_PRECO" EntitySet="TBT_MODELO_TABELA_PRECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PRECO" Association="Self.FK_TBT_TABELA_PRECO_TBT_MODELO_TABELA_PRECO">
+      <End Role="TBT_TABELA_PRECO" EntitySet="TBT_TABELA_PRECO" />
+      <End Role="TBT_MODELO_TABELA_PRECO" EntitySet="TBT_MODELO_TABELA_PRECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TABELA_PRECO_TBT_PEDIDO" Association="Self.FK_TBT_TABELA_PRECO_TBT_PEDIDO">
+      <End Role="TBT_TABELA_PRECO" EntitySet="TBT_TABELA_PRECO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TABELA_PRECO_TBT_PESSOA" Association="Self.FK_TBT_TABELA_PRECO_TBT_PESSOA">
+      <End Role="TBT_TABELA_PRECO" EntitySet="TBT_TABELA_PRECO" />
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TIPO_MARKETING_TBT_MARKETING" Association="Self.FK_TBT_TIPO_MARKETING_TBT_MARKETING">
+      <End Role="TBT_TIPO_MARKETING" EntitySet="TBT_TIPO_MARKETING" />
+      <End Role="TBT_MARKETING" EntitySet="TBT_MARKETING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TIPO_PEDIDO_TBT_CARRINHO" Association="Self.FK_TBT_TIPO_PEDIDO_TBT_CARRINHO">
+      <End Role="TBT_TIPO_PEDIDO" EntitySet="TBT_TIPO_PEDIDO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TIPO_PEDIDO_TBT_PEDIDO" Association="Self.FK_TBT_TIPO_PEDIDO_TBT_PEDIDO">
+      <End Role="TBT_TIPO_PEDIDO" EntitySet="TBT_TIPO_PEDIDO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_TIPO_PESSOA_TBT_PESSOA" Association="Self.FK_TBT_TIPO_PESSOA_TBT_PESSOA">
+      <End Role="TBT_TIPO_PESSOA" EntitySet="TBT_TIPO_PESSOA" />
+      <End Role="TBT_PESSOA" EntitySet="TBT_PESSOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_USUARIO_TBT_CARRINHO" Association="Self.FK_TBT_USUARIO_TBT_CARRINHO">
+      <End Role="TBT_USUARIO" EntitySet="TBT_USUARIO" />
+      <End Role="TBT_CARRINHO" EntitySet="TBT_CARRINHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBT_USUARIO_TBT_PEDIDO" Association="Self.FK_TBT_USUARIO_TBT_PEDIDO">
+      <End Role="TBT_USUARIO" EntitySet="TBT_USUARIO" />
+      <End Role="TBT_PEDIDO" EntitySet="TBT_PEDIDO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

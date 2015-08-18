@@ -1,0 +1,65 @@
+﻿@model  List<Web.Messages.Marketing>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="box-title">Pesquisa de Marketing</h3>
+                    </div>
+                    <div class="box-tools"></div>
+                    <div class="col-md-3 navbar-right text-right results_Found">
+                        @Model.Count resultados encontrados
+                    </div>
+
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Título</th>
+                        <th>Descricao</th>
+                        <th>Nome do Arquivo</th>
+                        <th>Data de Cadastro</th>
+                        <th>Editar</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoMarketing)
+                            </td>
+                            <td>
+                                @Functions.Status(item.Ativo)
+                            </td>
+                            <td>
+                                @Functions.Chop(@Html.DisplayFor(modelItem => item.Titulo).ToString(),20)
+                            </td>
+                            <td>
+                                @Functions.Chop(@Html.DisplayFor(modelItem => item.Descricao).ToString(), 20)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomeArquivo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DataCadastro)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CodMarketing })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+</div>
+
